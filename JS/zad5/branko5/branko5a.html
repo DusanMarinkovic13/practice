@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["imeCookie"].value;
+            if (x == "" || x[0].toUpperCase() != x[0]) {
+                alert("Ponovite unos imena");
+                return false;
+            }
+        }
+
+        function validateForm2() {
+            var x = document.forms["myForm"]["prezimeCookie"].value;
+            if (x == "" || x[0].toUpperCase() != x[0]) {
+                alert("Ponovite unos prezimena");
+                return false;
+            }
+        }
+
+        /**/
+        function toggleSelect() {
+            var isChecked = document.getElementById("check").checked;
+            document.getElementById("membership").disabled = !isChecked;
+            document.getElementById("submit").style.backgroundColor = "";
+        }
+
+        //**/
+
+        function funkcija() {
+            var e = document.getElementById("membership");
+            var vrsta = e.value;
+            if (e.value == "Silver") {
+                document.getElementById("submit").style.backgroundColor = "silver";
+            } else if (e.value == "Gold") {
+                document.getElementById("submit").style.backgroundColor = "gold";
+            } else if (e.value == "Platinum") {
+                document.getElementById("submit").style.backgroundColor = "skyblue";
+            }
+        }
+
+        /**/
+
+        function locstormake() {
+            var ime = document.getElementById("imeCookie").value;
+            var prezime = document.getElementById("prezimeCookie").value;
+            var membership = document.getElementById("membership").value;
+            var checkbox = document.getElementById("check").checked;
+
+            localStorage.setItem("imeCookie", ime);
+            localStorage.setItem("prezimeCookie", prezime);
+            localStorage.setItem("membership", membership);
+            localStorage.setItem("check", checkbox);
+        }
+
+        function localstorget() {
+            var imestorage = localStorage.getItem("imeCookie");
+            var prezimestorage = localStorage.getItem("prezimeCookie");
+            var membershipstorage = localStorage.getItem("membership");
+            var checkboxstorage = localStorage.getItem("check");
+            document.getElementById("pText").innerHTML = imestorage + prezimestorage + membershipstorage + checkboxstorage;
+        }
+
+        function page02() {
+            window.open('branko5b.html', '_blank');
+        }
+    </script>
+
+</head>
+
+<body>
+    </head>
+
+    <body>
+        <form name="myForm">
+            <p>Ime <input type="text" placeholder="Unesi ime" name='imeCookie' id="imeCookie"><br></p>
+            <p>Prezime <input type="text" placeholder="Unesi prezime" name='prezimeCookie' id="prezimeCookie"><br></p>
+            <select id="membership" name="membership" disabled onChange="funkcija();">
+          <option value="0" selected="selected" >Membership</option>
+          <option value="Silver">Silver</option>
+          <option value="Gold">Gold</option>
+          <option value="Platinum">Platinum</option>
+        </select>
+
+            <br>
+            <label>Premium</label>
+            <input type="checkbox" id="check" onClick="toggleSelect()">
+            <br>
+            <input type="submit" value="Submit" onclick="page02(),locstormake()" id="submit">
+            <input type="button" onclick="locstormake()" value="napravi local storage">
+            <input type="button" value="prikaz local storage" onclick="localstorget ()">
+            <input type="button" value="next page" onclick="page02(),locstormake()">
+            <p id="pText"></p>
+        </form>
+    </body>
+
+</body>
+
+</html>

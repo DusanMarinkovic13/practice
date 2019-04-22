@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primer Objekti</title>
+</head>
+<body>
+    <script type="text/javascript">
+    function Osoba(ime,prezime){
+        this.ime = ime;
+        this.prezime = prezime;
+        this.stampaj = function(){
+            document.write(this.ime + ", " + this.prezime + "</br>");
+        };
+    };
+    var o = new Osoba("Pera","Peric");
+    o.stampaj();
+    // "o" i "o2" ukazuju na isti objekat
+    var o2 = o;
+    o2.ime = "Mika";
+    o.stampaj();
+    o2.stampaj();
+    //napravi kopiju objekta "o"
+    var o3 = Object.create(o);
+    o3.ime = "Djura";
+    o.stampaj();
+    o3.stampaj();
+        </script>
+</body>
+</html>

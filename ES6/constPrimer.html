@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ne moze da se menja vrednost CONST
+        /* const PI = 3.14;
+        PI =5; */
+        // Uncaught TypeError: Assignment to constant variable.
+
+        const nekiObjekat = {
+            a:5,
+            b:6
+        }
+        //nekiObjekat = 10;//vraca  Assignment to constant variable.
+
+        nekiObjekat.a = 8; // ne pravi problem
+        console.log(nekiObjekat)
+
+        const people = ["Tesla","Edison"];
+        console.log(people);
+        people.push("Albert");
+        console.log(people);
+        </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const days = [
+            {id:"Pon",duty:"predavanja"},
+            {id:"Uto",duty:"predavanja"},
+            {id:"Sre",duty:"predavanja"},
+            {id:"Cet",duty:"predavanja"},
+            {id:"Petak",duty:"odmor"},
+            {id:"Subota",duty:"odmor"},
+            {id:"Nedelja",duty:"odmor"},
+            {id:"Pon",duty:"predavanja"},
+            {id:"Uto",duty:"predavanja"},
+            {id:"Sre",duty:"predavanja"},
+            {id:"Cet",duty:"predavanja"},
+            {id:"Petak",duty:"odmor"},
+            {id:"Subota",duty:"odmor"},
+            {id:"Nedelja",duty:"odmor"},
+            {id:"Pon",duty:"predavanja"},
+            {id:"Uto",duty:"predavanja"},
+            {id:"Sre",duty:"predavanja"},
+            {id:"Cet",duty:"predavanja"},
+            {id:"Petak",duty:"odmor"},
+            {id:"Subota",duty:"odmor"},
+            {id:"Nedelja",duty:"odmor"},
+            {id:"Pon",duty:"predavanja"},
+            {id:"Uto",duty:"predavanja"},
+            {id:"Sre",duty:"predavanja"},
+            {id:"Cet",duty:"predavanja"},
+            {id:"Petak",duty:"odmor"},
+            {id:"Subota",duty:"odmor"},
+            {id:"Nedelja",duty:"odmor"},
+        ];
+        
+       
+       //--------------------------------------
+        //const radni = days.map(x => x.duty);
+        function raspored(n, counter){
+            let i = 0;
+            while(i < counter){
+                //console.log(i +':{dan:"'+n[i].id+'-'+n.map(x => x.duty)[i]+'"}');
+                console.log(i +':{dan:"'+n.map(x => x.id)[i]+'-'+n.map(x => x.duty)[i]+'"}');
+                i++;
+            }
+        }
+        //raspored(days,28);
+        // console.log(" ");
+        // console.log(" ");
+        //--------------------------------------------------------------------------------------
+        let i = 0;
+        let x = days.length;
+            while(i<x){
+                console.log(i +':{dan:"'+days.map(x => x.id)[i]+'-'+days.map(x => x.duty)[i]+'"}');
+                i++;
+            }
+
+        //---------------------------------------------------------------------------------------
+        //resenje Aleksandar
+        const dani = [
+            "Pon - predavanja",
+            "Uto - predavanja",
+            "Sre - predavanja",
+            "Cet - predavanja",
+            "Petak - odmor",
+            "Subota - odmor",
+            "Nedelja - odmor"
+        ];
+        const brojNedelja = 4;
+        const danaUNedelji = 7;
+        const ukupanBrojPonavljanja = brojNedelja * danaUNedelji;
+        let pocetniIndexDana = 0;
+        const ciklus = [...Array(ukupanBrojPonavljanja)].map(() => ({
+            dan: dani[pocetniIndexDana++ %dani.length]
+        }));
+        console.log(ciklus);
+
+       
+               
+    </script>
+</body>
+</html>

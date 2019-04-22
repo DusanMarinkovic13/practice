@@ -1,0 +1,26 @@
+ZADATAK: 
+	Korišćenjem HTML i Sass tehnologija realizovati HTML stranicu prikazanu na slikama.
+	Implementirati sledeće zahteve:
+
+	1.	Sass kod modularizovati minimalno tako da se korišćene promenljive i mixini pišu u posebnim
+		sass datotekama koje se uključuju u glavni fajl.
+	2.	Sve boje (obavezno), fontove (neobavezno) kao i ostale korisne vrednosti (po sopstvenoj proceni)
+		izdvojiti u sass promenljive.
+	3.	Realizovati sledeće efekte:
+		a.	Kada se mišem pređe preko linkobva na glavnoj navigaciji, tekst postaje beo, a pozadina providna tamnosiva.
+		b.	Kada se mišem pređe preko dugmića na uvodnoj slici pozadina postaje crna (tamnosiva).
+	4.	Realizovati responsive verzije stranice za veliki i mali ekran.
+	
+
+BOJE: 
+	Plava (header i footer): #6495ed
+	Boja fonta: #696969
+	Naslovi: beli
+	Svetlo siva 1 (hover na dugmice): #cfcfcf
+	tamno siva (pozadina sekcija): #363636
+
+WEB FONTOVI: 
+	Dosis (tezine 100 i 400)
+	Ubuntu normal
+
+Providne pozadine imaju providnost 65-70%;

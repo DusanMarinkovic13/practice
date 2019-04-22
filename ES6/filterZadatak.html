@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filter zadatak</title>
+</head>
+<body>
+    <script>
+        const niz = [
+            "apple", "banana", "grapes", "mango", "orange"
+        ];
+        const niz1 = [
+            "migUel", "JamAIca", "gRoovEs", "mOngOdb", "AleiNs", "BRonCos"
+        ];
+        
+        const apFinder = (n,upit) => {
+            return n.filter(el => el.toLowerCase().indexOf(upit.toLowerCase()) > -1);
+        };
+
+        console.log(apFinder(niz,'Ap')); 
+        console.log(apFinder(niz1,'ro')); 
+        </script>
+</body>
+</html>

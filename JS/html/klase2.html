@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Klase 2</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        function Student(ime,prezime,index){
+            this.ime = ime;
+            this.prezime = prezime;
+            this.index = index;
+            Student.prototype.fakultet = "Megadens";
+        }
+        student1 = new Student("Toma", "Diploma","203/2016");
+        alert("Student " + student1.ime + " "+ student1.prezime + " studira na " + student1.fakultet+"-u!");
+        student1.fakultet = "FON";
+        alert("Student " + student1.ime + " "+ student1.prezime + " studira na " + student1.fakultet+"-u!");
+        </script>
+</body>
+</html>

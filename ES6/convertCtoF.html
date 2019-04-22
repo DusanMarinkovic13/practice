@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>konvertovanje F u C</title>
+</head>
+<body>
+    <script>
+        const fahrenheit = [0,32,45,75,80,99,120];
+        
+        //(t => ((t-32)/1.8).Math.round();
+        let temp = fahrenheit.map(t => (Math.round((t-32)/1.8)));
+        //let temp = fahrenheit.map(t => (Math.round((t-32)*5/9)));
+        console.log(temp);
+        </script>
+</body>
+</html>

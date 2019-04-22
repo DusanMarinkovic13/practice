@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>6 kockica</title>
+    <style>
+        body{
+            background-color: rgb(109, 109, 177);
+            
+            
+        }
+        #container{
+            display: inline-block;
+            width: 6em;
+            margin: 5px;
+            height: 540px;
+        }
+        .kvad{
+            background-color: rgb(20, 68, 40);
+            width: 5em;
+            height: 5em;
+            margin: 5px;
+        }
+
+        #ease{
+            border: 2px solid red;  
+        }
+        #ease:hover{
+            -webkit-animation-timing-function: ease;
+            transition-duration: 4s;
+            -webkit-transform: rotate(360deg);
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            margin-left: 800px;
+        }
+
+        #easeIn{
+            border: 2px solid rgb(22, 153, 10);
+        }
+        #easeIn:hover{
+            -webkit-animation-timing-function: ease-in;
+            transition-duration: 2s;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            margin-left: 800px;
+        }
+        #easeOut{
+            border: 2px solid rgb(14, 18, 248);
+        }
+        #easeOut:hover{
+            -webkit-animation-timing-function: ease-out;
+            transition-duration: 6s;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            margin-left: 800px;
+        }
+        #linear{
+            border: 2px solid rgb(236, 29, 174);
+        }
+        #ease-in-out{
+            border: 2px solid rgb(251, 255, 0);
+        }
+        #ease-in-out:hover{
+            -webkit-animation-timing-function: ease-in-out;
+            transition-duration: 2s;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            margin-left: 800px;
+        }
+        #cord{
+            border: 2px solid rgb(0, 225, 255);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" id="container"  >
+    <div class="kvad" id="ease">ease</div>
+    <div class="kvad" id="easeIn">ease in</div>
+    <div class="kvad" id="easeOut">ease out</div>
+    <div class="kvad" id="linear"> linear</div>
+    <div class="kvad" id="ease-in-out">ease-in-out</div>
+    <div class="kvad" id="cord"> (1.0 -0.5 -05 1)</div>
+    </div>
+</body>
+</html>

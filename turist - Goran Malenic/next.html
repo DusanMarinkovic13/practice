@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="turist.css">  
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <title>Odabir aranžmana</title>
+</head>
+<body>
+    <div id="container">
+        <div id="main"class="mx-auto">
+            <h1>Hello,<span id="naslov"></span> </h1>
+            <h5>You are our premium member, with <span id="klasa"></span> membership </h5><br>
+            Your possible destinations are:<br>
+            <select class="form-control"  id="destinacije" onclick="cena()"></select>
+            <br><br>
+            <h4 id="rezultat"style="display:none;">Price for your selected destination is <span id="bup"></span> RSD</h4><br>
+            <input id="dugme" type="submit" disabled="disabled" onclick="explain()">
+        </div>
+        
+        <div id="objasnjenje" class="mx-auto" style="display: none;">
+                    <h5>Ovako izgleda kod za prijem i obradu podataka sa prethodne strane ( zelenom bojom su date trenutne vrednosti promenljivih ):</h5><br>
+                        <b>var string = window.location.href;</b>          // ovde skupljam iz adrese sve potrebno - method POST sa prethodne strane <br>
+                        <span id="o1"></span><br><br>
+                        <b>var getit = new Array();</b>         // ovde definisem pomocni niz<br>
+                        <span id="o2"></span><br>
+                        <b>getit=string.split("?");</b>            // ovde odvajam adresu na dva dela - pre i posle znaka ? i stavljam u pomocni niz<br>
+                        <span id="o3"></span><br><br>
+                        <b>niz = unescape(getit[1]);</b>       // komanda unescape converts %20 to blanks - primenjujem je samo na getit[1] (samo mi taj deo treba)<br>
+                        <span id="o4"></span><br><br>
+                        <b>final = niz.trim();</b>             // ovde izbacujem blanks koji hoce da se pojave ako se koristi autofill na prethodnoj strani<br>
+                        <span id="o5"></span><br><br>
+                        <b>red = final.split(" ");</b>         // ovde splitujem u niz , svaki space se pretvara u clan niza<br>
+                        <span id="o6"></span><br><br>
+                        <b>gotov = red.filter(Boolean);</b>      // ovde izbacujem iz niza sve viskove i prazna polja - ostaju mi 4 podatka<br>
+                        <span id="o7"></span><br>
+        </div>
+
+    <script>
+            
+        var string = window.location.href;          // ovde skupljam iz adrese sve potrebno - method POST sa prethodne strane
+        var getit = new Array();            // definisem pomocni niz
+        getit=string.split("?");            // ovde odvajam adresu na dva dela - pre i posle znaka ? i stavljam u pomocni niz
+        niz = unescape(getit[1]);       // komanda unescape converts %20 to blanks
+        final = niz.trim();             // ovde izbacujem blanks
+        red = final.split(" ");         // ovde splitujem u niz , svaki space se pretvara u clan niza
+        gotov = red.filter(Boolean);      // ovde izbacujem iz niza sve viskove i prazna polja - ostaju mi 4 podatka
+        var dest = ["Zlatibor","Tara","Dubrovnik","Beč","Pariz","London","Barselona","New York","Tokio","Thailand","Moscow","Brasil"];   // definisane destinacije
+        var cene = [2400,3300,4760,5520,6770,8334,9930,10340,16700,22500,32350,54400];  // definisane cene
+        document.getElementById("naslov").innerHTML = " " + gotov[0] + " " + gotov[1];
+
+        // ovaj deo sluzi samo za ispis objasnjenja
+        document.getElementById("o1").innerHTML = " <b>string = </b>" + string ;
+        document.getElementById("o3").innerHTML = " <b>getit = getit[0] </b>" + getit[0] + "<b> + getit[1] </b> "+ getit[1] ;
+        document.getElementById("o4").innerHTML = " <b>niz = </b>" + niz ;
+        document.getElementById("o5").innerHTML = " <b>final = </b>" + final ;
+        document.getElementById("o6").innerHTML = " <b>red = </b>" + red ;
+        document.getElementById("o7").innerHTML = " <b>gotov = </b>" + gotov ;
+        // ovaj deo iznad sluzi samo za ispis objasnjenja
+
+
+        if (gotov[2] == "true"){
+            if(gotov[3] == 1){
+                document.getElementById("klasa").innerHTML = "Silver";          // ovde kreiram selecte za silvera, prvih 6
+                for (i=0; i<6 ; i++) { 
+                var opt = document.createElement("option"); 
+                opt.value = cene[i] ; 
+                opt.text = dest[i];
+                document.getElementById("destinacije").appendChild(opt); 
+                }
+            }
+            if(gotov[3] == 2){
+                document.getElementById("klasa").innerHTML = "Gold";            // ovde kreiram selecte za gold membera tj. prvih 9
+                for (i=0; i<9 ; i++) { 
+                var opt = document.createElement("option"); 
+                opt.value = cene[i] ; 
+                opt.text = dest[i];
+                document.getElementById("destinacije").appendChild(opt); 
+                }
+            }
+            if(gotov[3] == 3){
+                document.getElementById("klasa").innerHTML = "Platinum";        // ovde kreiram sve selecte, tj. svih 12
+                for (i=0; i<12 ; i++) { 
+                var opt = document.createElement("option"); 
+                opt.value = cene[i] ; 
+                opt.text = dest[i];
+                document.getElementById("destinacije").appendChild(opt); 
+                }
+            }  
+        }
+        else {
+            document.getElementById("klasa").innerHTML = "Standard";            // ovde kreiram samo prva 3 izbora u selectu
+            for (i=0; i<3 ; i++) { 
+                var opt = document.createElement("option"); 
+                opt.value = cene[i] ; 
+                opt.text = dest[i];
+                document.getElementById("destinacije").appendChild(opt); 
+            }
+       
+        }
+    function cena(){                   // Ovde ukljucujem nevidljivi ispis sa cenom, takodje i enablujem submit dugme
+        document.getElementById("rezultat").style = "block";
+        document.getElementById("bup").innerHTML = document.getElementById("destinacije").value ;
+        document.getElementById("dugme").disabled = false;
+    }
+
+    
+    function explain() {           // ovde postavljam vidljivo objasnjenje ako je potrebno
+        var txt;
+        var r = confirm("Da li je potrebno objasnjenje kako ovo funkcionise ?");
+        if (r == true) document.getElementById("objasnjenje").style = "block";
+        else alert("Thank You");
+    }
+
+
+
+    </script>
+</div>
+</body>
+</html>    

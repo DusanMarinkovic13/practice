@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Generatorska funkcija:
+function* numbers () {
+yield 9;
+yield 8;
+yield 7;
+yield 6;
+yield 5;
+yield 4;
+yield 3;
+yield 2;
+yield 1;
+return 0;
+}
+
+// Sledeći kod ne izvršava generatorsku funkciju *numbers(), nego kreira generator (specifični iterator)
+var nekiGenerator = numbers();
+
+// Nastavljanje iteracije sa next() metodom:
+console.log(nekiGenerator.next());   // Pokreće generator čita prvi red i vraća: { done: false, value: 9 }
+console.log(nekiGenerator.next());   // Vraća: { done: false, value: 8 }
+console.log(nekiGenerator.next());   // Vraća: { done: false, value: 7 }
+console.log(nekiGenerator.next());
+console.log(nekiGenerator.next());
+console.log(nekiGenerator.next());
+console.log(nekiGenerator.next());
+console.log(nekiGenerator.next());
+console.log(nekiGenerator.next());
+console.log(nekiGenerator.next());  // Vraća: { done: true , value: 0 }
+    </script>
+</body>
+</html>

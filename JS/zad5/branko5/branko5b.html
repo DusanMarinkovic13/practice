@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+
+    <script>
+        function start() {
+            ready();
+        }
+
+        window.onload = start;
+
+        function ready() {
+            var imestorage = localStorage.getItem("imeCookie");
+            var prezimestorage = localStorage.getItem("prezimeCookie");
+            var membershipstorage = localStorage.getItem("membership");
+            var checkboxstorage = localStorage.getItem("check");
+            if (membershipstorage != "0" && checkboxstorage == "true") {
+                document.getElementById("pText").innerHTML = "Welcome " + imestorage + " " + prezimestorage + " you s.o.b. have " + membershipstorage + " membership";
+            } else {
+                document.getElementById("pText").innerHTML = "You miserable bastard have no membership";
+            }
+        }
+
+        /**/
+
+        function getmembership() {
+            var membershipstorage = localStorage.getItem("membership");
+            document.getElementById("member").innerHTML = membershipstorage;
+            if (membershipstorage == "Silver") {
+                document.getElementById("silver").disabled = false;
+                document.getElementById("silver1").disabled = false;
+                document.getElementById("silver2").disabled = false;
+            } else if (membershipstorage == "Gold") {
+                document.getElementById("silver").disabled = false;
+                document.getElementById("silver1").disabled = false;
+                document.getElementById("silver2").disabled = false;
+                document.getElementById("gold").disabled = false;
+                document.getElementById("gold1").disabled = false;
+                document.getElementById("gold2").disabled = false;
+            } else if (membershipstorage = "Platinum") {
+                document.getElementById("platinum").disabled = false;
+                document.getElementById("platinum1").disabled = false;
+                document.getElementById("platinum2").disabled = false;
+                document.getElementById("silver").disabled = false;
+                document.getElementById("silver1").disabled = false;
+                document.getElementById("silver2").disabled = false;
+                document.getElementById("gold").disabled = false;
+                document.getElementById("gold1").disabled = false;
+                document.getElementById("gold2").disabled = false;
+            } else if (membershipstorage == "Membership") {
+                document.getElementById("platinum").disabled = true;
+                document.getElementById("platinum1").disabled = true;
+                document.getElementById("platinum2").disabled = true;
+                document.getElementById("silver").disabled = true;
+                document.getElementById("silver1").disabled = true;
+                document.getElementById("silver2").disabled = true;
+                document.getElementById("gold").disabled = true;
+                document.getElementById("gold1").disabled = true;
+                document.getElementById("gold2").disabled = true;
+            }
+        }
+
+        /**/
+
+        function funkcijacena() {
+            var e = document.getElementById("destinacija").value;
+
+            if (e == "Klek") {
+                document.getElementById("pText2").innerHTML = "250 din";
+            } else if (e == "Zitiste") {
+                document.getElementById("pText2").innerHTML = "300 din";
+            } else if (e == "Hetin") {
+                document.getElementById("pText2").innerHTML = "400 din";
+            } else if (e == "Nasca Desert") {
+                document.getElementById("pText2").innerHTML = "500 din";
+            } else if (e == "Area 51") {
+                document.getElementById("pText2").innerHTML = "600 din";
+            } else if (e == "Tiwanaku") {
+                document.getElementById("pText2").innerHTML = "700 din";
+            } else if (e == "Prypyat") {
+                document.getElementById("pText2").innerHTML = "800 din";
+            } else if (e == "Dyatlov Pass") {
+                document.getElementById("pText2").innerHTML = "900 din";
+            } else if (e == "Podkamennaya Tunguska") {
+                document.getElementById("pText2").innerHTML = "1000 din";
+            } else if (e == "Beograd") {
+                document.getElementById("pText2").innerHTML = "gratis + mala uzina";
+            } else if (e == "Novi Beograd") {
+                document.getElementById("pText2").innerHTML = "gratis + uzina";
+            } else if (e == "Beograd Na Vodi") {
+                document.getElementById("pText2").innerHTML = "gratis + velika uzina + zuti sok";
+            } else {
+                document.getElementById("pText2").innerHTML = "bolje sedi kuci kad nemas para";
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <p id="pText"></p>
+    <br>
+    <select id="destinacija" onchange="funkcijacena()" onclick="getmembership()">
+        <option value="no">Odaberite destinaciju</option>
+        <option value="Klek">Klek</option>
+        <option value="Zitiste">Zitiste</option>
+        <option value="Hetin">Hetin</option>
+        <option id="silver" value="Nasca Desert" disabled>Nazca Desert</option>
+        <option id="silver1" value="Area 51" disabled>Area 51</option>
+        <option id="silver2" value="Tiwanaku" disabled>Tiwanaku</option>
+        <option id="gold" value="Prypyat" disabled>Prypyat</option>
+        <option id="gold1" value="Dyatlov Pass" disabled>Dyatlov Pass</option>
+        <option id="gold2" value="Podkamennaya Tunguska" disabled>Podkamennaya Tunguska</option>
+        <option id="platinum" value="Beograd" disabled>Beograd</option>
+        <option id="platinum1" value="Novi Beograd" disabled>Novi Beograd</option>
+        <option id="platinum2" value="Beograd Na Vodi" disabled>Beograd Na Vodi</option>
+      </select>
+
+    <p id="pText2"></p>
+    <p id="member"></p>
+</body>
+
+</html>

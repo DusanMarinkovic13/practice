@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zadatak map 2</title>
+</head>
+
+<body>
+    <script>
+        const n = [1, 2, 3, 4, 5];
+
+        function uvecaj(x) {
+            return x * 2;
+        }
+
+        function umanji(x) {
+            return x / 2;
+        }
+
+        function koren(x) {
+            return Math.sqrt(x);
+        }
+        //----------------------------------------------------
+        //resenje sa foreach petljom
+        function map(n, povratna) {
+            let noviN = []
+            n.forEach(element => {
+                noviN.push(povratna(element));
+            });
+            return noviN;
+        }
+        //----------------------------------------------------
+        //resenje sa for in petljom
+        /*  function map(n, povratna) {
+             let noviN = []
+             for (i in n) {
+                 noviN.push(povratna(n[i]));
+             }
+             return noviN;
+         } */
+        //----------------------------------------------------
+        //resenje sa klasicnom for petljom
+        /*  function map(niz, transformator) {
+             var povratniNiz = [];
+             for (var i = 0; i < niz.length; i++) {
+                 povratniNiz.push(transformator(niz[i]));
+             }
+             return povratniNiz;
+         } */
+        //----------------------------------------------------
+        console.log(uvecaj(16));
+        console.log(umanji(16));
+        console.log(koren(16));
+        console.log(map(n, uvecaj));
+        console.log(map(n, umanji));
+        console.log(map(n, koren));
+    </script>
+</body>
+
+</html>

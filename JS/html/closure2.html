@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Closure - primer2 </title>
+</head>
+<body>
+    <script type="text/javascript">
+        function dodaj(){
+            var blok = document.createElement("div");
+            blok.innerHTML = "Kliknite na dugme.";
+            document.body.appendChild(blok);
+            var dugme = document.createElement("input");
+            dugme.type = "button";
+            dugme.value = "Dugme";
+            dugme.onclick = klik;//DEFINISEMO EVENT HANDLER
+            document.body.appendChild(dugme);
+            function klik(){
+                blok.innerHTML = "KLIKNUTO!";
+            }
+        }
+        dodaj();
+        // f-ja doddaj() kreira jedan div blok i jedno input dugne. da bi se promenila poruka u bloku,
+        // potrebno je kliknuti na dugme i zato mu zadajemo onclick  svojstvo kao referencu na f-ju klik()!
+        //  Dok korisnik klikne na dugme, funkcija dodaj() je odavno zavrsena. medjutim, funkcija klik(), 
+        // koja se tada poziva, "odrzava u zivotu" sve lokalne proomenljive njene nadf-je - i blok i dugme.
+        // Zahvakljujuci 
+    </script>
+ </body>
+</html>

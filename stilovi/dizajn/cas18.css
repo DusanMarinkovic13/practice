@@ -1,0 +1,22 @@
+#test{
+    font-size: 10px;
+    font-style: italic;
+    color: red;
+    text-align: center;
+    
+}
+/* ovaj deo menja boju svih paragrafa sa id-jem test*/
+p#test{
+    font-size: 30px;
+    color: blue;
+    font-weight: bold;
+    text-align: right;
+    font-style: normal;
+}
+.desno{
+    text-align: right;
+}
+.centar{
+    text-align: center;
+    color: green;
+}

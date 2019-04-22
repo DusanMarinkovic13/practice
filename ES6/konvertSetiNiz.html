@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        nekiSet = new Set();
+        nekiSet.add(2);
+        nekiSet.add(4);
+        nekiSet.add(5);
+        nekiSet.add(7);
+        nekiSet.add(8);
+        var nekiNiz = Array.from(nekiSet);
+        console.log(nekiNiz);
+        noviSet = new Set([1,2,3,4,5,6]);
+        console.log(noviSet);
+        var text = "Indija";
+        var text1 = "indija";
+        var mySet = new Set(text);
+        var mySet1 = new Set(text1);
+        console.log(mySet);
+        console.log(mySet.size);
+        console.log(mySet1.size);
+        
+
+    </script>
+</body>
+</html>

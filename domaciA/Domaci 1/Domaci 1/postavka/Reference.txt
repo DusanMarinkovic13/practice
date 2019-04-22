@@ -1,0 +1,29 @@
+WEBSITE:
+width: 800px;
+background-color: #C0C0C0;
+border-radius: 25px;
+
+HEADER:
+height: 200px;
+background-color: white;
+
+SADRZAJ:
+width: 750px;
+
+FOOTER:
+height: 200px;
+background-color: #989898;
+
+BOKSOVI ZA VESTI SU TRANSPARENTNI:
+opacity:0.6;
+filter:alpha(opacity=60);
+
+MENU:
+background-color: #989898;
+HOVER: 
+background-color:#707070;
+
+GALLERY:
+kad se stane mišem na sliku ona treba da se uveæa ( velicine kao na slici Gallery page)
+
+

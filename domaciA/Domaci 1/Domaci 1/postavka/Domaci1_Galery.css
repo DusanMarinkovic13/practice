@@ -1,0 +1,233 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    width: 800px;
+    background: #C0C0C0;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+#content {
+    width: 750px;
+    height: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    background: #fff;
+    height: 200px;
+    border-radius: 25px;
+}
+
+header p {
+    float: left;
+    width: 70%;
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 25px;
+    margin: 70px 0 0 50px;
+}
+
+header img {
+    width: 20%;
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+nav {
+    background: #989898;
+    overflow: auto;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+nav:hover {
+    background: #707070;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li:first-child {
+    margin-left: 20px;
+}
+
+nav li {
+    float: left;
+    margin-right: 80px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#vuk {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#images1 {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#images2 {
+    margin-left: 20px;
+}
+
+#images1 p {
+    font-weight: 700;
+}
+
+#images2 p {
+    font-weight: 700;
+}
+
+#images1 img {
+    display: inline;
+    width: 17%;
+    height: 100px;
+    border: 2px solid #fff;
+    margin-right: 1%;
+}
+
+#prvi:hover {
+    cursor: pointer;
+    -webkit-transform: skew(30deg, 20deg);
+}
+
+#images1 img:hover {
+    cursor: pointer;
+    border: 10px solid #ffffe0;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+}
+
+#cet:hover {
+    cursor: pointer;
+    -webkit-transform: rotate(45deg);
+}
+
+
+/* #prvi:hover {
+    background: url(images/1.jpg);
+    cursor: pointer;
+    position: relative;
+    top: -50px;
+    left: 200px;
+    border: 10px solid #ffffe0;
+    width: 300px;
+    height: 200px;
+} */
+
+#images2 img {
+    display: inline;
+    width: 17%;
+    height: 100px;
+    border: 2px solid #fff;
+    margin-right: 1%;
+}
+
+#images2 img:hover {
+    cursor: pointer;
+    border: 10px solid #ffffe0;
+    position: relative;
+    /* top: 40px; */
+    left: 100px;
+    /*width: 300px;
+    height: 200px */
+    ;
+    -webkit-transform: scale(4, 4);
+}
+
+#italy {
+    margin: 20px 0 0 60px;
+    color: #fff;
+    font-weight: 600;
+}
+
+footer {
+    width: 750px;
+    margin: 0 auto;
+}
+
+footer div {
+    float: left;
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    margin: 0 1.6% 0 1.6%;
+}
+
+footer img {
+    width: 70%;
+}
+
+
+/*OD PROFE*/
+
+.thumbnails {
+    float: left;
+    width: 110px;
+    height: 90px;
+}
+
+.text_line {
+    clear: both;
+    margin-bottom: 2px;
+}
+
+.thumbnail img {
+    border: 1px solid white;
+    margin: 5px;
+    background-color: #C0C0C0;
+}
+
+.thumbnail:hover {
+    background-color: transparent;
+}
+
+.thumbnail:hover img {
+    border: 1px solid blue;
+}
+
+.thumbnail span {
+    position: absolute;
+    background-color: lightyellow;
+    padding: 5px;
+    visibility: hidden;
+    color: black;
+    text-decoration: none;
+}
+
+.thumbnail:hover span {
+    visibility: visible;
+    top: 50px;
+    left: 0px;
+    z-index: 50;
+    border-width: 0;
+    padding: 10px;
+    -webkit-transform: scale(2, 2);
+    /* width:300px; */
+}
+
+.thumbnail:nth-child(odd):hover span {
+    cursor: pointer;
+    -webkit-transform: scale(2, 2) rotate(45deg);
+    top: 60px;
+    left: 60px;
+}
+
+
+/*OD PROFE*/

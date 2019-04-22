@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function varTest(){
+            if(true){
+                var x=2;
+            }
+            console.log(x);
+        }
+        varTest();
+        //ispisuje 2
+        /* function letTest(){
+            if(true){
+                let x = 2;
+            }
+            console.log(x);
+        }
+        letTest(); */
+        // ispisuje ReferenceError - nije dostupno izvan IF bloka
+
+        function uradi(){           
+            console.log(bar);
+            console.log(pi);
+            console.log(foo);
+            var bar = 1;
+            const pi = 3.14;
+            let foo = 2;
+        }
+        uradi();
+        // u es6 nema hoistovanja
+        </script>
+</body>
+</html>

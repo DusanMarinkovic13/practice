@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const niz = [1, 2, 3, 4];
+const red = (palac, kurac) => palac + kurac;
+
+// 1 + 2 + 3 + 4
+console.log(niz.reduce((palac, kurac) => palac + kurac));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(niz.reduce(red,10));
+// expected output: 15
+    </script>
+</body>
+</html>

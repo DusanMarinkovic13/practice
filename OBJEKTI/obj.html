@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objekti 1</title>
+</head>
+<body>
+    <script>
+        //preko literala
+        var obj = {};
+        obj.ime = "Pera";
+        obj.prezime = "Peric";
+        obj.punoIme = function(){
+            console.log(this.ime + " "+ this.prezime);
+        }
+        obj.punoIme();
+        //promena vrednosti prezimena
+        obj.prezime = "Petrovic";
+        obj.punoIme();
+        //promena metode punoIme
+        obj.punoIme = function(){
+            console.log("Hello "+this.ime + " "+ this.prezime);
+        }
+        obj.punoIme();
+        //kreiranje objekta sa new
+        var osoba = new Object();
+        osoba.ime = "Mika";
+        osoba.prezime = "Mikic";
+        console.log(osoba);
+        console.log(osoba.ime + " "+osoba.prezime);
+        //preko konstruktora
+        function person(ime,prezime){
+            this.ime = ime;
+            this.prezime = prezime;
+        }
+        var person = new person("Jova","Jovic");
+        console.log(person.ime + " "+person.prezime);
+
+        function osoba2(ime,prezime){
+            this.ime = ime;
+            this.prezime = prezime;
+            var privatna = 3;
+        }
+        var o = new osoba2("Susie","Q");
+        console.log(o.ime + " "+ o.prezime);
+        console.log(o.privatna);
+        // funkcije
+        var animal ={ime: "ralf", rasa: "pas"};
+        animal.stampaj = function(){
+            console.log(this.ime + ", "+this.rasa );
+        }
+        animal.stampaj();
+        delete animal.stampaj();
+        animal.stampaj();
+        console.log(animal);
+        //privatne funkcije
+        function osoba3(ime,prezime){
+            this.ime = ime;
+            this.prezime = prezime;
+            var privatna = 3;
+            var stampaj2= function(){
+                document.write("Osoba2.stampaj2: "+this.ime+", "+ this.prezime+ ", privatna "+privatna+"</br>");
+            }; 
+        }
+        
+        var o = new osoba3("Ratko", "Ratkovic");
+        console.log(o);
+        for(x in o){
+            console.log(0[x] + "=>> vrsta: "+ typeof(o[x]+"</br>"));
+        }
+
+        //ovo ne radi, je stampaj2 nije funkcija pa sam zakomentarisao
+        //o.stampaj2();
+
+        //primer za Object.create();
+       /*  var o = new osoba3("Ratko", "Ratkovic");
+        o.stampaj();
+        var o3 = Object.create(o);
+        o3.ime = "Djura";
+        o.stampaj();
+        o3.stampaj(); */
+        
+        </script>
+</body>
+</html>

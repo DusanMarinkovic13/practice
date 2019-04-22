@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function* main(){                                                   //  generatorska funkcija
+   let i = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0];                     //  podesavam niz od 10 do 0, za odbrojavanje
+   for (let broj of i) {                                           //  prolazim kroz petlju za svaki clan niza i
+   yield 1000;                                                     //  odredjujem broj milisekundi izmedju svake iteracije
+   console.log('Preostalo je '+broj+' sekundi');}                  //  ispisujem broj sekundi u svakoj iteraciji ( koji stize svakih 1 sekund) ----  ( vizuelno izgleda kao da odbrojavam )
+}
+
+function resume(ms, generator){                                     // Funkcija koja daje time delay od 1 sekunde
+   setTimeout(function(){                                          //          >>>  setTimeout(function(){ alert("Hello"); }, 3000); - isto kao ovo samo umesto hello pozivam generatorsku funkciju
+       var nextSleep = generator.next().value;                     //          >>>  a umesto fiksnog tajmera imam yield iz generatorske funkcije
+       resume(nextSleep, generator);                               // sledeca pauza od 1 sekund
+   }, ms);                                                         // ovde je timeout za svaki yield koji je pozvan ( vrednost ms je yield tj. 1000 )
+}
+
+var generator = main();                                             //  definisem generatorsku funkciju
+var firstSleep = generator.next().value;                            //  ovde pokrecemo prvu iteraciju, tj. prvu pauzu od 1 sekund
+resume(firstSleep, generator);                                      //  ovde pocinje, poziva generator funkciju sa pauzom od sekund
+    </script>
+</body>
+</html>

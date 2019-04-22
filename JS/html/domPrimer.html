@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM primer</title>
+</head>
+<body>
+    <p>
+        text paragrafa
+        <a href="http://google.com">link na google</a>
+    </p>
+    <p id="t"></p>
+    <button onclick="s(3)">test</button>
+    <script>
+        function s(x){
+            return document.getElementById("t").innerHTML = Math.random()*x;
+        }
+    </script>
+</body>
+</html>

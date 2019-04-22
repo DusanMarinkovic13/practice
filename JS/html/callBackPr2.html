@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>callBack primer2</title>
+</head>
+<body>
+    <script type="text/javascript">
+    var allUserData =[];
+    function log(userData){
+        if(typeof userData == "string"){
+            console.log(userData);
+        }else if(typeof userData =="object"){
+            for(var item in userData){
+                console.log(item + " : "+ userData[item]);
+            }
+        }
+    }
+
+    //f-ja koja prima dva parametra, drugi ja callback funkcija
+    function getInput(options, callback){
+        allUserData.push(options);
+        callback(options);
+    }
+        </script>
+</body>
+</html>

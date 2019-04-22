@@ -1,0 +1,254 @@
+/*
+1. inline, interni pa eksterni stil.
+2. 
+3. postoje active, visited, unvisited, hover
+4. margina definiše udaljenost od bordera nekog elementa, na kojoj može biti neki drugi element. Može imati
+    negativne i pozitivne vrednosti, a može biti podešena i na auto. Postoje top, bottom, left i right.
+5. padding definiše udaljenost nekog elementa od svog bordera. Postoje top, bottom, left i right.
+6. media pravilo služi da bi se omogućio pregled stranice na ekranima sa različitim veličinama i rezolucijama. 
+   Potrebno je podesiti veličinu rezolucije u @media i podesiti način prikaza određenih elemenata u skladu sa 
+   smanjivanjem ili povećevanjem rezolucije.
+7. scale, rotation, skew, perspective, initial, inherit
+8.3d transformacija predstavlja promenu oblika nekog elementa ne samo po x i y osi, nego i po dubini. Može se
+    menajti ugao prikaza elementa i tako se postiže 3d efekat.
+9. prednosti su što omogućava lakši i brži raspored elemenata unutar stranice i definiše prostor koji određeni
+    elemenat zauzima na stranici i u odnosu na druge elemente. Nedostaci su što ne omogućava isti prikaz na 
+    svim uređajima i što mora da se radi dosta prepravki da bi se omogućio željeni prikaz na različitim uređajima.
+10. prednost elastičnog dizajna je što omogućava lakši prikaz stranice na različitim rezolucijama ekrana.
+11. grid predstavlja mrežu vertikalnih i horizontalnih linija unutar stranice. Pomoću njega možemo definisati 
+    redove i kolone u okviru stranice i odrediti raspored određenih elemenata. Prilikom definisanja se 
+    koristi jedinica "fr" koja je uvedena za tu namenu. Korišćenjem grid-template-ares možemo definisati 
+    oblasti na stranici i definisati koliko koja zauzima redova i kolona. 
+12. Prilikom smanjivanja veličine ekrana grid će red koji se sastoji od šest pravougaonika smanjivati tako 
+    što će prebacivati jedan po jedan u sledeći red, zadržavajući njegove dimenzije. Flex će prebaciti 
+    pravougaounik u sledeći red koji će biti širine kao i ceo prvi red. 
+
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    justify-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "zaglavlje zaglavlje zaglavlje zaglavlje zaglavlje zaglavlje zaglavlje zaglavlje" "o1 o1 o1 o1 o1 o1 o1 o1" "o2 o2 o2 o2 o2 o2 o2 o2" "o3 o3 o3 o3 o3 o3 o3 o3" "o4 o4 o4 o4 o4 o4 o4 o4";
+    grid-row-gap: 5px;
+    background-color: rgb(255, 31, 31);
+    width: 85%;
+    place-content: center;
+}
+
+.grid>div {
+    background-color: rgb(205, 247, 121);
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid rgb(8, 0, 1);
+}
+
+
+/*---------------------------------------------*/
+
+.zaglavlje {
+    grid-area: zaglavlje;
+}
+
+.zaglavlje img {
+    height: 5em;
+    float: left;
+}
+
+.zaglavlje ul {
+    list-style-type: none;
+    justify-items: left;
+    float: right;
+}
+
+.zaglavlje li {
+    display: inline;
+    /* padding: 3px 10px 3px 10px;
+    margin-right: 5px;
+    border-right: 0.1em solid black; */
+    float: left;
+}
+
+
+/*--------------------------------------------*/
+
+.o1 {
+    grid-area: o1;
+}
+
+.o1 {
+    background-image: url(images/gp1.JPG);
+    height: 35em;
+    background-repeat: no-repeat;
+}
+
+.o1 p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.o1 button {
+    background-color: greenyellow;
+    padding: 0.6em;
+}
+
+.o1 a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/*---------------------------------------------*/
+
+.o2 {
+    grid-area: o2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "u1 u2 u3";
+    grid-gap: 5px;
+}
+
+.box span {
+    font-size: 1.5em;
+}
+
+.box p {
+    text-align: justify;
+    padding: 0.2em;
+}
+
+#drugi {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+
+/* .box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "u1 u2 u3";
+    grid-gap: 5px;
+} */
+
+
+/*---------------------------------------------*/
+
+.o3 {
+    grid-area: o3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "s1 s2 s3 s4";
+    grid-gap: 5px;
+}
+
+.o3 img {
+    width: 100%;
+}
+
+.o3 img:hover .back {
+    /* transform: rotateY(180deg);
+    transition: 2s; */
+    opacity: 0;
+    transition: 1s;
+    visibility: visible;
+}
+
+.back {
+    visibility: hidden;
+    position: relative;
+    /* bottom: 30px;
+    left: 0px; */
+    /* top: -4.9em; */
+}
+
+
+/* #wrapper .text {
+    position: relative;
+    bottom: 30px;
+    left: 0px;
+    visibility: hidden;
+}
+#wrapper:hover .text {
+    visibility: visible;
+} */
+
+
+/* .o3 img:hover .back {
+    display: inline;
+} */
+
+
+/*---------------------------------------------*/
+
+.o4 {
+    grid-area: o4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "infoBox links kForma";
+    grid-gap: 5px;
+}
+
+.infoBox p {
+    text-align: justify;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+#form fieldset {
+    border: none;
+}
+
+#formOne {
+    justify-content: end;
+    align-content: end;
+    text-align: left;
+    border: 0.2em solid rgb(15, 88, 15);
+    margin-top: auto;
+    padding: 0.2em;
+    background-color: rgb(224, 212, 213);
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 4px 5px;
+    margin: 3px 0;
+    box-sizing: border-box;
+}
+
+input[type=text]:hover {
+    background-color: rgb(200, 240, 240);
+    font-weight: bold;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 4px 5px;
+    margin: 3px 0;
+    box-sizing: border-box;
+}
+
+input[type=password]:hover {
+    background-color: rgb(200, 240, 240);
+    font-weight: bold;
+}
+
+input[placeholder] {
+    font-family: Ranga;
+    font-style: italic;
+}
+
+.o4 ul {
+    list-style-type: none;
+}
+
+
+/*---------------------------------------------*/

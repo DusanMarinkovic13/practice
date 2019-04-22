@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    width: 800px;
+    background: #C0C0C0;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+#content {
+    width: 750px;
+    height: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background: #fff;
+    height: 200px;
+    border-radius: 25px;
+}
+
+header p {
+    float: left;
+    width: 70%;
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 25px;
+    margin: 70px 0 0 50px;
+}
+
+header img {
+    width: 20%;
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+nav {
+    background: #989898;
+    overflow: auto;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+nav:hover {
+    background: #707070;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li:first-child {
+    margin-left: 20px;
+}
+
+nav li {
+    float: left;
+    margin-right: 80px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none; 
+}
+
+
+/* .margin1 {
+    margin-left: 1.6%;
+} */
+
+.margin2 {
+    margin-right: 2%;
+}
+
+
+#first {
+    float: left;
+    width: 55%;
+    text-align: left;
+}
+
+#first p {
+    border: 1px solid #000;
+    color: #4d4d66;
+    background: rgba(230,230,230,0.6);
+    filter:alpha(opacity=60);
+    border-radius: 10px;
+    width: 90%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 25px;
+    font-weight: 600;
+    text-align: left;
+}
+
+#first img {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: rgba(230,230,230,0.6);
+    filter:alpha(opacity=60);
+    margin-left: 20px;
+}
+
+#second {
+    float: right;
+    width: 40%;
+    text-align: right;
+}
+
+#second p {
+    border: 1px solid #000;
+    color: #4d4d66;
+    background: rgba(230,230,230,0.6);
+    filter:alpha(opacity=60);
+    border-radius: 10px;
+    padding: 25px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#second_nested {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    background: rgba(230,230,230,0.6);
+    filter:alpha(opacity=60);
+}
+
+#second_nested img {
+    width: 100%;
+}
+
+#second_nested p {
+    border: none;
+    background: none;
+    opacity: 1;
+    padding: 0;
+    margin: 0;
+}
+
+
+#footer {
+    background: #989898;
+    height: 170px;
+    border-radius: 10px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    width: 750px;
+    margin: 0 auto;
+}
+
+footer div {
+    float: left;
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    margin: 0 1.6% 0 1.6%;
+}
+
+
+footer img {
+    width: 70%;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <!--omogucuje babel.js -->
+  <!-- <p> Random number: {Math.random()*10}</p> -->
+    <script type="text/babel"> 
+    class App extends React.Component{
+        state = {
+            ime: 'Petar',
+            godine: 30
+        }
+        prelazakMisa = (e) =>{
+            console.log(e.target, e.pageX, e.pageY);           
+        }
+        klik = (e) => {
+            console.log(e.target);
+            console.log(this.state);
+            this.setState({
+                ime:'Mika',
+                mesto: 'Zr',
+                skola: 'FTN'
+            });
+        }
+        
+        render(){
+            var date = new Date();
+            var vreme = date.getHours();
+            var message = "";
+            if(vreme<12){
+                message = "morning"
+            }else{
+                message = "afternoon"
+            }
+            return(
+                <div className="app-content">
+                <h1>Hello, World!</h1> 
+                <p> Random number: { Math.random()*10}</p> 
+                <p> Moje ime je {this.state.ime}, ja imam {this.state.godine} godina!</p>  
+                <p> Good {message} sir! Now is {vreme} hours</p>  
+                <button onMouseOver= {this.prelazakMisa}>Predji misem</button>
+                <br/>
+                <button onClick= {this.klik}>Klikni ovde</button>     
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<App />, document.getElementById('app'));
+ </script>
+</body>
+</html>

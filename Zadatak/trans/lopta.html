@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lopta</title>
+    <style>
+         Div{
+            width: 800px;
+            height: 600px;
+            background: rgb(236, 182, 182);
+            border: 2px solid black;
+            position: relative;
+            -webkit-animation: mymove infinite;
+        }
+        
+    </style>
+</head>
+<body>
+        <svg>
+            <circle cx="7" cy="-7" rx="20" ry="20" fill="orange" stroke="#44aa88">
+
+            </circle>>
+            </svg>
+</body>
+</html> -->
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title> Lopta koja skace </title>
+
+    <style media="screen">
+        h2 {
+            text-align: center;
+        }
+        
+        .container {
+            background-color: #f2f2f2;
+            margin: 0 auto;
+            width: 400px;
+            height: 400px;
+            position: relative;
+            box-shadow: inset 0 0 3px #000;
+            border: 2px solid #222;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .container b {
+            display: block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #FF0000;
+            box-shadow: inset -6px -6px 5px rgba(0, 0, 0, .7), 10px 15px 3px rgba(0, 0, 0, .3);
+            position: absolute;
+            -webkit-animation: moveX 1.4s linear 0s infinite alternate, moveY 0.7s linear 0s infinite alternate;
+        }
+      /*   @keyframes myOrbit {
+        from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+        to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); } */
+}
+
+        
+        @-webkit-keyframes moveX {
+            from {
+                left: 30px;
+            }
+            to {
+                left: 350px;
+            }
+        }
+        
+        @-webkit-keyframes moveY {
+            from {
+                top: 30px;
+            }
+            to {
+                top: 350px;
+            }
+        } 
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <b></b>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="./jquery-3.3.1.js"></script>
+    <title>jQuery primer 2</title>
+</head>
+<body>
+   
+    <div id="myDiv">
+        <p id="prvi">Text nekog paragrafa</p>
+        <p id="drugi">Text nekog drugog paragrafa</p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+        $("#myDiv").css("background-color","#f9f577");
+        $("#myDiv").height(300);
+        $("#myDiv").width(300);
+        $("#prvi").css("color", "#8ab6fc");
+        $("#drugi").css("color", "#f9331d");
+        });
+        
+    </script>
+</body>
+</html>

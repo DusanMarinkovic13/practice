@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mouse event</title>
+    <script language = "javascript">
+            var counter = 0;
+            function closeWindow(){
+                alert("Gotovo je!");
+                window.close;
+            }
+            function mouseOverCounter(){
+                counter++;
+                if(counter == 1){
+                    alert(counter + " prelazak preko dugmeta!");
+                }else{
+                    alert(counter + " prelazak preko dugmeta!");
+                }
+            }
+            </script>
+</head>
+<body ondblclick=" closeWindow()";>
+    <p><font face = "arial" size=3></font> Dva puta kliknite da bi ste zatvorili prozor!</p>
+    <p>Registruje se prlazak misa preko linka</p>
+    <a href="#" onmouseover="alert('Događaj: onMouseOver');"> onMouseOver</a>
+    <p>Registruje se odlazak misa sa linka</p> 
+    <a href="#" onmouseout="alert('Događaj: onMouseOut');">onMouseOut</a>
+    <p>Kada se mis pozicionira na dugme i pomeri poziva se funkcija<br>koja broji koliko puta se desio ovakav događaj</p>
+    <form>
+        <input type="button" value="onMouseMove" onmousemove="mouseOverCounter();">
+    </form>
+</body>
+</html>

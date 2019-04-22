@@ -1,0 +1,60 @@
+body {
+    display: grid;
+    justify-items: center;
+}
+
+button {
+    background-color: rgb(209, 176, 172);
+    width: 6.5em;
+    height: 2.2em;
+    font-size: 1.3em;
+    margin: 1em;
+}
+
+.digit {
+    font-size: 2em;
+}
+
+#digit1 {
+    vertical-align: middle;
+}
+
+#x,
+#y {
+    height: 2.4em;
+}
+
+#box {
+    width: 70em;
+    height: 30em;
+    background-color: aqua;
+}
+
+#demo {
+    width: 45em;
+    height: 5em;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 1em;
+}
+
+span {
+    vertical-align: middle;
+}
+
+.rez {
+    display: inline-flex;
+    height: 7em;
+}
+
+#rez1 {
+    float: left;
+}
+
+#rez1 .digit {
+    padding-top: 2.5em;
+}
+
+#rez2 {
+    float: right;
+}

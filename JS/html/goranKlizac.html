@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Start" onclick="start()">
+    <input type="button" value="Previous" onclick="before()">
+    <input type="button" value="Next" onclick="fun()">
+    <input type="button" value="Pause" onclick="pause()">
+    <input type="button" style="float:right;" value="+" onclick="fontp()">
+    <span style="float:right;margin: 4px;"> Font size <span id="font"style="float:right;margin:2px;margin-top:0px;"> 50</span></span>
+    <input type="button" style="float:right;" value="-" onclick="fontm()"><br><br><br>
+
+    <div id="slider" style="float:right;margin-right:50px;width:200px;">
+        <input type="radio" name="boja" id="colorbody" checked onclick="sliderChange()">Body <br>
+        <input type="radio" name="boja" id="colorback" onclick="sliderChange()">Background <br>
+        <input type="radio" name="boja" id="colorfont" onclick="sliderChange()">Font <br><br> R:
+        <input type="range" min="0" max="255" value="255" id="r" oninput="sliderSelect()"><span id="rtext">255</span><br><br> G:
+        <input type="range" min="0" max="255" value="255" id="g" oninput="sliderSelect()"><span id="gtext">255</span><br><br> B:
+        <input type="range" min="0" max="255" value="255" id="b" oninput="sliderSelect()"><span id="btext">255</span><br><br>
+    </div>
+
+    <div id="selector" style="margin:15px;float:right;">
+    </div>
+
+    <div id="demo" style="margin:50px;padding:10px;height:100px; width:100px;font-size:50px;">
+        <p id="txt">Front End Web Developing</p>
+    </div>
+
+
+    <script>
+        var bgn; // promenljiva koja mora da se definise ovde da ne bi bila lokalna, tj. da mogu da je koristim u vise funkcija
+        var hist = []; // definisem prazan niz za povratak unazad
+        var rgb; // promenljiva koja ce vracati rgb vrednosti za razlicite style parametre (body color, background color i font color)
+        var c = 50; // inicijalna velicina fonta
+
+        function start() { // poziva callback funkciju fun svakih pola sekunde
+            bgn = setInterval(fun, 500);
+        }
+
+        function pause() { // resetuje interval od pola sekunde i ispisuje trenutne vrednosti u alertu
+            clearInterval(bgn);
+            alert("body background color = " + document.body.style.backgroundColor + "\n ------------------" + "\nfont background color = " + document.getElementById("txt").style.backgroundColor + "\nfont color = " + document.getElementById("txt").style.color + "\nfont size = " + document.getElementById("txt").style.fontSize);
+        }
+
+        function fun() { // funkcija koja se poziva sa dva mesta, sa dugmetom sledeci i kao callback iz funkcije start
+            document.getElementById("txt").style.backgroundColor = random(); // pozivam funkciju random da dobijem rgb vrednost
+            hist.push(rgb); // sa push komandom upisujem rgb vrednosti u niz 3 puta, za sva tri style-a
+            document.getElementById("txt").style.color = random();
+            hist.push(rgb);
+            document.body.style.backgroundColor = random();
+            hist.push(rgb);
+            sliderChange(); //  ovde pozivam funkciju da podesi klizac na trenutne vrednosti
+        }
+
+        function before() { // funkcija za vracanje prethodne vrednosti
+            document.body.style.backgroundColor = hist[hist.length - 4]; // ovde se uzima cetvrti podatak od pozadi, menja style elementa i brise poslednji unos u niz (3 puta za sva tri style-a)
+            hist.pop();
+            document.getElementById("txt").style.color = hist[hist.length - 4];
+            hist.pop();
+            document.getElementById("txt").style.backgroundColor = hist[hist.length - 4];
+            hist.pop();
+            sliderChange(); //  ovde pozivam funkciju da podesi klizac na trenutne vrednosti
+        }
+
+        function fontm() { // funkcija za smanjenje velicine fonta i ispis trenutne vrednosti 
+            c--;
+            document.getElementById("txt").style.fontSize = c + "px";
+            document.getElementById("font").innerHTML = c;
+        }
+
+        function fontp() { // funkcija za povecanje velicine fonta i ispis trenutne vrednosti 
+            c++;
+            document.getElementById("txt").style.fontSize = c + "px";
+            document.getElementById("font").innerHTML = c;
+        }
+
+        function random() { // funkcija za dobijanje random rgb vrednosti, za svaki style elementa se poziva ponovo - daje jedan rezultat rgb(x,y,z)
+            // takodje, istovremeno i ispisuje vrednosti sa strane kod klizaca
+            const r = Number(Math.floor(Math.random() * 256));
+            if (document.getElementById("colorbody").checked == true) document.getElementById("r").value = r;
+            if (document.getElementById("colorback").checked == true) document.getElementById("r").value = r;
+            if (document.getElementById("colorfont").checked == true) document.getElementById("r").value = r;
+            const g = Number(Math.floor(Math.random() * 256));
+            if (document.getElementById("colorbody").checked == true) document.getElementById("g").value = g;
+            if (document.getElementById("colorback").checked == true) document.getElementById("g").value = g;
+            if (document.getElementById("colorfont").checked == true) document.getElementById("g").value = g;
+            const b = Number(Math.floor(Math.random() * 256));
+            if (document.getElementById("colorbody").checked == true) document.getElementById("b").value = b;
+            if (document.getElementById("colorback").checked == true) document.getElementById("b").value = b;
+            if (document.getElementById("colorfont").checked == true) document.getElementById("b").value = b;
+            rgb = "rgb(" + r + "," + g + "," + b + ")";
+            return rgb;
+        }
+
+        function sliderSelect() { // funkcija koja na pomeranje klizaca ispisuje vrednosti i momentalno ih primenjuje na selektirani objekat            !!!  koristi se za vrednosti klizaca prebaci na objekat  !!!!
+            var x = document.getElementById("r").value;
+            document.getElementById("rtext").innerHTML = x;
+            var y = document.getElementById("g").value;
+            document.getElementById("gtext").innerHTML = y;
+            var z = document.getElementById("b").value;
+            document.getElementById("btext").innerHTML = z;
+            var back = "rgb(" + x + "," + y + "," + z + ")";
+            if (document.getElementById("colorbody").checked == true) document.body.style.backgroundColor = back;
+            if (document.getElementById("colorback").checked == true) document.getElementById("txt").style.backgroundColor = back;
+            if (document.getElementById("colorfont").checked == true) document.getElementById("txt").style.color = back;
+        }
+
+        function sliderChange() { // funkcija koja postavlja klizac na trenutne vrednosti i ispisuje ih pored u zavisnosti od selektora               !!! koristi se da postojece vrednosti prebaci na klizac  !!!
+            if (document.getElementById("colorbody").checked == true) {
+                var deli = String(document.body.style.backgroundColor); // ovde vadim vrednost u obliku rgb(x,y,z);
+                deo = deli.split(",") // ovde delim na 3, dobijam: "rgb(x" , "y" , "z)"
+                rcupan = deo[0].split("(")[1]; // ovde delim "rgb(x" na 2 i dobijam "x"
+                bcupan = parseInt(deo[2]); // ovde vadim broj iz "z)" i dobijam "z"
+                document.getElementById("rtext").innerHTML = Number(rcupan); //------------------------------------------------------    
+                document.getElementById("r").value = Number(rcupan); //
+                document.getElementById("gtext").innerHTML = Number(deo[1]); //  U ovom delu dodeljujem vrednosti klizacu tj. postavljam
+                document.getElementById("g").value = Number(deo[1]); //  ga na poziciju i ispisujem vrednosti pored
+                document.getElementById("btext").innerHTML = Number(bcupan); //
+                document.getElementById("b").value = Number(bcupan);
+            } //------------------------------------------------------
+
+
+
+            if (document.getElementById("colorback").checked == true) {
+                var deli = String(document.getElementById("txt").style.backgroundColor); // sve ponavljam 3 puta za svaku opciju radio butona
+                deo = deli.split(",")
+                rcupan = deo[0].split("(")[1];
+                bcupan = parseInt(deo[2]);
+                document.getElementById("rtext").innerHTML = Number(rcupan);
+                document.getElementById("r").value = Number(rcupan);
+                document.getElementById("gtext").innerHTML = Number(deo[1]);
+                document.getElementById("g").value = Number(deo[1]);
+                document.getElementById("btext").innerHTML = Number(bcupan);
+                document.getElementById("b").value = Number(bcupan);
+            }
+
+
+
+            if (document.getElementById("colorfont").checked == true) {
+                var deli = String(document.getElementById("txt").style.color);
+                deo = deli.split(",")
+                rcupan = deo[0].split("(")[1];
+                bcupan = parseInt(deo[2]);
+                document.getElementById("rtext").innerHTML = Number(rcupan);
+                document.getElementById("r").value = Number(rcupan);
+                document.getElementById("gtext").innerHTML = Number(deo[1]);
+                document.getElementById("g").value = Number(deo[1]);
+                document.getElementById("btext").innerHTML = Number(bcupan);
+                document.getElementById("b").value = Number(bcupan);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

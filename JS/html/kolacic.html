@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script language="javascript">
+        function postavljanjeCookie() {
+           document.cookie = 'Cookie je=' + document.forma1.imeCookie.value;
+        }
+        function prikazCookie() {
+            alert(document.cookie);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Cookie 1</h1>
+    <h2>Postavljanje i pregled cookie</h2>
+    <form name="forma1">
+        <p>
+            <input name="imeCookie" type="text" id="imeCookie" size="20">
+        </p>
+        <p>
+            <input type="button" value="Upisite ime" name="B1" onClick="postavljanjeCookie()">
+            <input type="button" value="Prikazi cookie" name="B2" onClick="prikazCookie()">
+        </p>
+    </form>
+</body>
+</html>

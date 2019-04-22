@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Callback</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var friends = ["Pera", "Mika","Zika"];
+        friends.forEach(function(eachName,index){
+            console.log(index +1+ "."+eachName);
+        });
+
+        // forEach metodi prosledjena anonimna f-ja (f-ja bez imena) kao parametar
+        // isto ponasanje mozemo da dobijemo i sa imenovanom funkcijom
+        var friends = ["Pera", "Mika","Zika"];
+        function imenovana(eachName,index){
+            console.log(index +1+ "."+eachName);
+        }
+        friends.forEach(imenovana);
+        </script>
+</body>
+</html>

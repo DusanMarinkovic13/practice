@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="./jquery-3.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="stil.css">
+    <title>Zadatak 2, jQuery</title>
+</head>
+<body>
+    <div id="kvadrat">
+
+    </div>
+    <button id="rast">za rast</button>
+    <button id="smanjenje" >za smanjenje</button>
+    <script>
+
+    $(document).ready(function(){
+        $("#rast").click(function(){
+            $("#kvadrat").animate({width:'400px', height:'400px', marginLeft: '250px', borderRadius: '50px',opacity: '0.5'},
+                1500,
+                "linear",
+                function(){$(this).after("Animation complete");}
+                )
+            });    
+        });
+        /* 7,500,000,000,000
+        7,500,000,000,000 */
+        $(document).ready(function(){
+        $("#smanjenje").click(function(){
+            $("#kvadrat").animate({width:200, height:200, marginLeft: '0px', opacity: '1', borderRadius: '0px'},
+                700,
+                "linear"
+                //function(){$(this).after("Animation complete");}
+                );
+            })    
+        });
+
+ 
+        
+         
+    </script>
+</body>
+</html>

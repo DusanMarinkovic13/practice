@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak 4</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function Smestaj(naziv, adresa, grad) {
+            this.naziv = naziv,
+                this.adresa = adresa,
+                this.grad = grad,
+                Smestaj.prototype.stampaj = function() {
+                    document.write(naziv + " " + adresa + " " + grad);
+                }
+        };
+
+        function Hotel(naziv, adresa, grad, brojZvezdica) {
+            Smestaj.call(this, naziv, adresa, grad, brojZvezdica);
+            this.brojZvezdica = brojZvezdica;
+            Smestaj.prototype.predstaviSe = function() {
+                document.write("Smestaj: " + "<br>" + naziv + ", nalazi se na adresi: " + adresa + " u gradu " + grad +
+                    "<br>" + "Hotel ima " + brojZvezdica + " zvezdica." + "<br>" + "Mi smo hotel smesten u okviru parka!");
+            }
+        }
+
+
+        Hotel.prototype = Object.create(Smestaj.prototype);
+
+        Hotel.prototype.constructor = Hotel;
+
+        Hotel.prototype.stampaj = function() {
+            Smestaj.prototype.stampaj.call(this);
+        }
+
+        Hotel.prototype.predstaviSe = function() {
+            Smestaj.prototype.predstaviSe.call(this);
+        }
+
+        function Motel(naziv, adresa, grad, brojSoba) {
+            Smestaj.call(this, naziv, adresa, grad, brojSoba);
+            this.brojSoba = brojSoba;
+            Smestaj.prototype.predstaviSe = function() {
+                document.write("Smestaj: " + "<br>" + naziv + ", nalazi se na adresi: " + adresa + " u gradu " + grad +
+                    "<br>" + "Motel ima " + brojSoba + " soba." + "<br>" + "Mi smo Motel smesten uz Ibarsku magistralu!");
+            }
+        }
+
+        Motel.prototype = Object.create(Smestaj.prototype);
+        Motel.prototype.constructor = Motel;
+
+        Motel.prototype.stampaj = function() {
+            Smestaj.prototype.stampaj.call(this);
+        }
+        Motel.prototype.predstaviSe = function() {
+            Smestaj.prototype.predstaviSe.call(this);
+        }
+
+
+        var park = new Hotel("Hotel Park", "Futoska 144", "Novi Sad", 4);
+        //var era = new Motel("Motel Era", "Ibarska 120", "Stepojevac", 18);
+
+        park.predstaviSe();
+        document.write("<br>");
+        park.stampaj();
+        document.write("<br>");
+        document.write("<br>");
+        var era = new Motel("Motel Era", "Ibarska 120", "Stepojevac", 18);
+        era.stampaj();
+        document.write("<br>");
+        era.predstaviSe();
+    </script>
+</body>
+
+</html>

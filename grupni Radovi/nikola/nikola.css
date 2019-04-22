@@ -1,0 +1,186 @@
+/*Odgovori
+
+
+
+1. Forme sluze za pravljenje "log in-ova" i sam tag forma sluzi za lakse navodjenje u html-u kodu. U njih se mogu ubacivati inputi raznih tipova od teksta, passoworda, raznih tipova dugmadi sa razlicitim funkcijama.
+
+2. Name atribut se ne vidi na klijentskoj strani ali sluzi za oznacavanje elemenata, primer: Da bi radio button mogao da funkcionise kako treba moraju imati isti name atribut. Action atribut sluzi za odredjivanje funkcije forme.
+
+3. GET metoda se koristi kada ocemo da podatake vucemo sa servera tj kad trazimo nesto, primer: Search forma. POST metoda sluzi za slasnje podataka na server, primer: Log In/Sign Up forme.
+
+4. Input element sluzi za ubacivanje polja u formi ili van nje. Sve zavisi od type-a koji ce biti (text,password,email,..)
+
+5. I-frame atributi mogu biti: a href, frameborder, width, height, ...
+
+6. Div je prazan kontejner. U njega se mogu ubaciti razni elementi ali inace sluzi za lakse rasporedjivanje (kao folder).
+
+7. Prednosti css-a su ti sto zbog njega HTML kod ostaje CIST (sto bi i trebalo da bude tako), moze se koristiti eksterni, interni i inline css/style.
+
+8. Selektor je element koji hocemo da upravljamo primer h1, p, ul, ..., a deklaracija je skup selektora i atributa, primer: p {font-size:20px;}
+
+9. Prioritet CSS koda od najmanjeg ka najvecem: element, klasa, id, i cetvrti koji se izbegava je !important.
+
+10. ID koristimo kada hocemo samo taj jedan jedinstveni element da pogodimo i taj ID ne mozemo vise nigde koristiti (moze ali gledace samo taj poslednji element u koji je unet taj ID). Klase se koriste kada hocemo na vise elemenata da primenimo jednu stvar tipa .class {margin-bottom: 10px;}.*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background: #f2f2f2;
+    font-family: "Nunito";
+}
+
+.center {
+    text-align: center;
+}
+
+
+/*PRVI SECTION*/
+
+#prvi img {
+    width: 60%;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    left: 2vh;
+}
+
+#prvi {
+    width: 20%;
+    height: 650px;
+    display: inline-block;
+    padding: 10px 10px 20px 10px;
+    text-align: center;
+}
+
+#drugi {
+    width: 80%;
+    height: 650px;
+    padding: 10px;
+    display: inline-block;
+    float: right;
+}
+
+#vesti {
+    position: relative;
+    left: 40px;
+    margin-top: 10px;
+    width: 80%;
+    border: 2px solid #00b050;
+    color: #b01513;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+#letter::first-letter {
+    font-weight: 700;
+    font-size: 25px;
+}
+
+#letter {
+    width: 65%;
+    text-align: left;
+    position: relative;
+    left: 6vh;
+    margin-bottom: 50px;
+}
+
+#form {
+    border: 2px solid #00b050;
+    width: 80%;
+    text-align: center;
+    position: relative;
+    left: 40px;
+}
+
+#login {
+    margin-top: 10px;
+    color: #b01513;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#form input[type="text"] {
+    background: #f2e7e7;
+    border: 1px solid #f2e7e7;
+    width: 70%;
+    padding: 2px;
+    margin: 5px 0;
+}
+
+#form input[type="button"] {
+    background: #00b050;
+    width: 28%;
+    border: 1px solid #00b050;
+    border-radius: 3px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    left: 6.3vh;
+}
+
+
+/*DRUGI SECTION*/
+
+#prvired {
+    text-align: center;
+    margin-top: 50px;
+    word-spacing: 50px;
+    margin-bottom: 80px;
+}
+
+#prvired a {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#prvired span {
+    word-spacing: 0px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 25px;
+    border-bottom: 2px solid #b01513;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+table {
+    border: 2px solid #b01513;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #b01513;
+    border-bottom: 2px solid #b01513;
+    color: #fff;
+    font-weight: 400;
+    padding: 3px;
+}
+
+td {
+    text-align: center;
+    padding: 3px;
+    border-bottom: 2px solid #b01513;
+}
+
+tr:nth-child(odd) {
+    background: #f2e7e7;
+}
+
+#poslednji {
+    width: 90%;
+    border-top: 2px solid #b01513;
+    text-align: right;
+    font-size: 20px;
+    margin-top: 200px;
+}

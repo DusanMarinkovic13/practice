@@ -1,0 +1,34 @@
+#pSlovo:first-letter{
+   font-size:35px;
+   color: blue;
+}
+a{
+    color: red;
+}
+a:hover{
+    color: blueviolet;
+}
+#zuti{
+    background-color: yellow;
+    color: red;
+}
+#procitaj{
+    font-weight: bold;
+} 
+.italic{
+    font-style: italic;
+} 
+.italic:first-child{
+    color: blue;
+    
+}
+[title|=prvi]{
+    color: blue;
+}
+.forma:focus{
+    background: yellow;
+}
+[value|=Submit]:hover{
+    color: aqua;
+    background-color: red;
+}

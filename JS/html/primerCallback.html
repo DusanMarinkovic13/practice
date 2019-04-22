@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primer callBack</title>
+</head>
+<body>
+    <script type="text/javascript">
+    /* 
+    Ovde smo postavili tajmer i zadali f-ju fun() kao callback,koja se poziva posle 4 sekunde.
+    Ovo je tipican primer puziranja izvrsavanja programa - sve se zavrsi, a onda se, 4 sekunde kasnije 
+    ponovo aktivira. */
+    function fun(){
+        document.body.style.backgroundColor = "#003";
+    }
+    window.setTimeout(fun,4000);
+        </script>
+</body>
+</html>

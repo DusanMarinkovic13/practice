@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="myList">
+        <li>id|name </li>
+    </ul>
+    <script>
+        const nekiNiz = ["a", "b", "c"];
+        const drugi = [{
+            "id": 1,
+            "name": "Bob",
+            "finance": [{
+                "dug": 1000
+            }, {
+                "uplata": 400
+            }, {
+                "ostatak": ""
+            }]
+        }, {
+            "id": 2,
+            "name": "Rob",
+            "finance": [{
+                "dug": 1000
+            }, {
+                "uplata": 500
+            }, {
+                "ostatak": ""
+            }]
+        }, {
+            "id": 3,
+            "name": "Billy",
+            "finance": [{
+                "dug": 1000
+            }, {
+                "uplata": 300
+            }, {
+                "ostatak": ""
+            }]
+        }]
+        const nekiIterator = nekiNiz[Symbol.iterator]();
+
+        for (let n of drugi) {
+            //console.log(n);
+            //return n.id + " " + n.name;
+            //console.log(n.name + " ima id: " + n.id + " ima uplatu: " + n.finance[uplata]);
+        }
+        for (let n of drugi) {
+            let x = n.finance[0].dug;
+            let y = n.finance[1].uplata;
+            let c = x - y;
+            console.log(x);
+            console.log(y);
+            console.log("Ostatak duga je " + c + " dinara");
+        }
+
+        /* function myFunction() {
+            var node = document.createElement("LI");
+            var textnode = document.createTextNode("Water");
+            node.appendChild(textnode);
+            document.getElementById("myList").appendChild(node);
+        } */
+
+        function names() {
+            for (let n of drugi) {
+                let x = n.id + "|" + n.name;
+                var node = document.createElement("LI");
+                var textnode = document.createTextNode(x.toString());
+                node.appendChild(textnode);
+                document.getElementById("myList").appendChild(node);
+                return n.id + " " + n.name;
+            }
+        }
+        /* var lista = names();
+        document.getElementById("lista").appendChild("P").innerHTML = lista; */
+    </script>
+</body>
+
+</html>

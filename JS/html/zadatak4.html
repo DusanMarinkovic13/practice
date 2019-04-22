@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/zadatak4.css">
+    <title>Zadatak 4</title>
+</head>
+<body>
+    
+
+<div class="container">
+    <form id="forma">
+            <label for="naslov">Produzenje registracije</label>
+            <div class="form-group">
+                <label for="first name">ime</label>
+                <input type="text" class="form-control" id="ime"  placeholder="unesite ime">
+            </div>
+            <div class="form-group">
+                <label for="last name">prezime</label>
+                <input type="text" class="form-control" id="prezime"  placeholder="unesite prezime">
+            </div>
+            <div class="form-group">
+                <label for="jmbg">JMBG</label>
+                <input type="text" class="form-control" id="jmbg"  placeholder="unesite JMBG">
+            </div>
+            <div class="form-group">
+                <label for="registracija">registracija</label>
+                <input type="text" class="form-control" id="registracija"  placeholder="unesite registraciju">
+            </div>
+            <div class="form-group">
+                <label for="marka">Marka vozila</label>
+                <select class="custom-select">
+                    <option selected></option>
+                    <option value="1">Mercedes</option>
+                    <option value="2">Volvo</option>
+                    <option value="3">Audi</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tip">Tip vozila</label>
+                <select class="custom-select">
+                    <option selected></option>
+                    <option value="m">Motorno</option>
+                    <option onmouseover="eko()"  value="e" >Elektricno</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" onclick="document.write(prosledi())">Submit</button>
+          </form>
+          <p id="eko">Eko klasa</p>
+        </div>
+    <script>
+        //ime,prezime,jmbg,registracija,marka,tip
+        /* window.onload = function(){
+            if(document.getElementById("ime")===""){
+                document.getElementsByClassName("btn").style.display = "none";
+            }
+        } */
+        function eko(){
+            //document.getElementById("eko").innerHTML = "Eko klasa!"
+            document.getElementById("eko").style.display = "block";
+        }
+        
+        function prosledi(){
+            return "Uspesno ste popunili formu za registraciju vozila!"
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Mr:Mrs</title>
+</head>
+<body>
+        <script type="text/javascript">
+       function pozdrav(person, pol) {
+    
+            var isMan = "Mr";
+            if(pol === "Man"){
+                isMan = "Mr";
+            }else if(pol === "AV"){
+                isMan = "feget";   
+            }else{
+                isMan = "Mrs";   
+            } 
+
+            document.write("Hello, " + isMan + " " + person + "<br>");
+        }
+       
+        function f1(ime, prezime, pol, callback) {
+            var personName = ime + " " + prezime;
+            if (typeof callback === "function") {
+                callback(personName, pol);
+            }
+        } 
+        function f2(ime, pol, callback) {
+                callback(ime, pol);          
+        }
+        f1("Maja","Gojkovic", "Ma", pozdrav);
+        f2("Donald Duck", "Man", pozdrav);
+        </script>
+</body>
+</html>

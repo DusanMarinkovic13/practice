@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="main">
+
+   <h1>Produženje registracije</h1>
+
+   <form id="unos">
+
+       Ime:<br>
+
+       <input class="form-control"type="text" id="ime" placeholder="Unesi ime" onblur ="capitalize(this)"onKeyup="checkform()"><br>
+
+       Prezime:<br>
+
+       <input class="form-control"type="text" id="prezime" placeholder="Unesi prezime" onblur ="capitalize(this)"onKeyup="checkform()"><br>
+
+       JMBG:<br>
+
+       <input class="form-control"type="text" id="jmbg" placeholder="Unesi JMBG"onblur ="number(this)"onKeyup="checkform()"><br>
+
+       Registracija:<br>
+
+       <input class="form-control"type="text" id="registracija" placeholder="Unesi registraciju"onKeyup="checkform()" onblur="plate(this)"><br>
+
+       Marka vozila:<br>
+
+       <select class="form-control" name="marka"onKeyup="checkform()">
+
+               <option placeholder="Izaberi opciju"></option>
+
+               <option value="1">Mercedes</option>
+
+               <option value="2">Peugeot</option>
+
+               <option value="3">Renault</option>
+
+       </select><br>
+
+       Tip vozila:<br>
+
+       <select class="form-control"name="tip"onKeyup="checkform()" onblur="tablica(this)">
+
+               <option placeholder="Izaberi opciju"></option>
+
+               <option value="1">Motorno</option>
+
+               <option value="2">Električno</option>
+
+       </select><br>        <input id="dugme" type="submit" disabled="disabled">
+
+       <p class="text-center mx-auto"id="eko2"style="display:none; background-color:green;width:200px;height:50px;padding:10px;font:25px;color:white;"></p>
+
+       <p class="text-center mx-auto"id="eko1"style="display:none; background-color:red;width:200px;height:50px;padding:10px;font:25px;color:white;"></p>
+
+   </form>
+   <script>
+
+   // funkcija za prva dva polja, ime i prezime, vraca automatski prvo slovo veliko, ako nije upisano nista vraca prazno
+
+   function capitalize(form){
+
+       value = form.value;
+
+       if (value == ""){return}
+
+       else{
+
+       velikoslovo = '';
+
+       value = value.split(' ');
+
+   for(var i = 0; i < value.length; i++) {
+
+       velikoslovo += value[i].substring(0,1).toUpperCase() + value[i].substring(1,value[i].length) + ' ';
+
+       }
+
+   form.value = velikoslovo;
+
+   }}    // funkcija za JMBG, proverava prvo da li su svi brojevi, a potom da li je duzina 13, ako nije odmah daje alert - ovo mozda promenim
+
+   function number(form){
+
+       var data = form.value;
+
+       if(isNaN(data)){alert("JMBG se sastoji iskljucivo od brojeva !!!")}
+
+       else{
+
+           if(data.length == 13){}
+
+           else{alert("duzina mora biti 13 !!!")}
+
+           }
+
+   }    // funkcija upisivanja tablice u nevidljivi <p>
+
+   function plate(form){
+
+       var data = form.value;
+
+       document.getElementById("eko1").innerHTML = data;
+
+       document.getElementById("eko2").innerHTML = data;
+
+   }    // funkcija provere tipa vozila - odredjuje koji ce se <p> videti - crveni ili zeleni
+
+   function tablica(form){
+
+       var boja = form.value;
+
+       if (boja == 1){
+
+           var f = document.getElementById("eko1");
+
+           f.style.display = "block";
+
+           }
+
+       else{
+
+           var f = document.getElementById("eko1");
+
+           f.style.display = "none";
+
+           }
+
+       if (boja == 2){
+
+           var f = document.getElementById("eko2");
+
+           f.style.display = "block";
+
+           }
+
+       else{
+
+           var f = document.getElementById("eko2");
+
+           f.style.display = "none";
+
+           }
+
+   }    // funkcija provere forme, ako je svih 6 polja pravilno uneseno enabluje submit button
+
+   function checkform(){
+
+       var f = document.forms["unos"].elements;
+
+       var cansubmit = true;        for (var i = 0; i < 6; i++) {
+
+           if (f[i].value.length == 0) cansubmit = false;
+
+       }
+
+       if (cansubmit) {
+
+           document.getElementById('dugme').disabled = false;
+
+       }
+
+       else {
+
+           document.getElementById('dugme').disabled = 'disabled';
+
+       }
+
+   }
+
+</script>
+</body>

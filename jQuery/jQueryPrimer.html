@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="./jquery-3.3.1.js"></script>
+    
+    <title>jQuery primer</title>
+</head>
+<body>
+    <!-- https://oscarotero.com/jquery/ -->
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p>Click me too!</p>
+   
+    <script>
+        //var abc = $('div.class');
+
+        // jQuery = window.$ = function(selector,context){
+        //     //kod F-je
+        // };
+
+
+    $(document).ready(function(){
+        $("p").click(function(){
+        $(this).hide();
+        });
+    });
+     </script> 
+    
+</body>
+</html>

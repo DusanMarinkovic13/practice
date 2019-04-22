@@ -1,0 +1,15 @@
+.tabela, th, td{
+    width: 70%;
+    border: 1px solid #98bf21;
+    text-align: left;
+    border-collapse: collapse;
+    padding: 5px;
+}
+.tabela, th{
+    background-color: #A7C942;
+    font-weight: bold;
+
+}
+.tabela tr:nth-child(2n){
+    background-color:#EAF2D3;
+}

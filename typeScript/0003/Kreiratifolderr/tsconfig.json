@@ -1,0 +1,10 @@
+{
+    "compilerOptions":{
+
+        "target":"ES5",//kompajliramo u es5
+        "module":"commonjs",//nacin modularizacije koda
+        "sourceMap":true,//nemogucnost definisanja tipa podataka u any
+        "noImplicitAny": true,//nemogucnost definisanja tipa podataka u any
+        "removeComments":false//ciscenje komentara fajlovima
+    }
+}

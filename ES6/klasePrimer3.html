@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Klase 3</title>
+</head>
+<body>
+    <script>
+        class Base{
+            foo(){
+                return "foo in Base";
+            }
+            bar(){
+                return "bar in Base";
+            }
+        }
+        class Child extends Base{
+            foo(){
+                return "foo in Child";
+            }
+            whiz(){
+                return "whiz in Child";
+            }
+        }
+        const b = new Base;
+        const c = new Child;
+        const z = new Base;
+        console.log(b.foo());
+        console.log(b.bar());
+        console.log(c.foo());
+        console.log(c.bar());
+        console.log(c.whiz());
+        console.log(b.whiz()); //iz roditeljske ne mogu  da dohvatim metod whiz u child f-ji
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Niramit";
+	line-height: 1.3;
+}
+
+body {
+	background: url(images/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 60%;
+	margin: 0 auto;
+}
+
+/*HEADER*/
+
+header {
+	overflow: hidden;
+	background: #d80e0e;
+	text-align: auto;
+	border-radius: 0 0 10px 10px;
+	height: 12vh;
+	margin-bottom: 5vh;
+}
+
+/*HEADER H1*/
+
+header h1 {
+	display: inline-block;
+	width: 60%;
+	vertical-align: middle;
+	font-size: 4.5em;
+	font-weight: 700;
+	font-style: italic;
+	padding-left: 2vw;
+	font-family: "Merienda";
+}
+
+/*HEADER NAV*/
+
+header nav {
+	width: 35%;
+	display: inline-block;
+	text-align: right;
+}
+
+header div {
+	display: inline-block;
+	width: 12%;
+	margin-left: 3%;
+	background: #000;
+	height: 10.7vh;
+	border-radius: 0 0 50px 50px;
+	text-align: center;
+	vertical-align: middle;
+	padding-right: 0.05vw;
+}
+
+header div img {
+	width: 80%;
+	padding-top: 6.2vh;
+}
+
+
+/*MAIN*/
+
+main {
+	background: #000;
+	height: 90vh;
+	color: #fff;
+	border-radius: 10px;
+	margin-bottom: 3vh;
+}
+
+main section {
+	background: url(images/music.jpg);
+	background-repeat: no-repeat;
+	background-size: 40%;
+	height: 50vh;
+	padding: 2.5vh 2.5vw; 
+	border-radius: 10px;
+}
+
+h2 {
+	background: #fff;
+	color: #000;
+	margin-left: 45vw;
+	padding: 3px;
+	font-size: 2em;
+	font-weight: 700;
+	font-style: italic;
+	font-family: "Merienda";
+	text-align: center;
+	border-radius: 5px;
+	margin-bottom: 3vh;
+	margin-top: 1vh;
+}
+
+#align p{
+	text-align: justify;
+	margin-bottom: 6vh;
+}
+
+#align {
+	width: 60%;
+	margin-left: 22vw;
+}
+
+/*3 BLOCKS*/
+
+.inline {
+	display: inline-block;
+	width: 32.5%;
+	vertical-align: top;
+	margin-right: 0.55%;
+}
+
+.inline h3 {
+	background: #d80e0e;
+	color: #fff;
+	font-family: "Merienda";
+	font-style: italic;
+	font-weight: 700;
+	font-size: 2em;
+	padding: 3px;
+	border-radius: 5px;
+	margin-bottom: 1vh;
+}
+
+.inline p {
+	text-align: justify;
+}
+
+.inline a {
+	background: #fff;
+	color: #000;
+	display: block;
+	margin-top: 1vh;
+	padding: 3px;
+	width: 30%;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+#border {
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	padding: 0 10px;
+}
+
+/*FOOTER*/
+
+footer {
+	background: #fff;
+	overflow: hidden;
+	border-radius: 10px;
+	padding: 7px;
+}
+
+footer img {
+	display: inline-block;
+	width: 2.5%;
+	margin-right: 0.2%;
+	vertical-align: middle;
+}

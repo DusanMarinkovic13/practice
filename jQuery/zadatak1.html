@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="./jquery-3.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="stil.css">
+    <title>Zadatak 1 jQuery</title>
+</head>
+<body>
+    <p id="prviP">Neki paragraf koji ima nekoliko reci</p>
+    <p id="drugiP" style="color:black; font-weight:lighter; font-size:35px">Neki drugi paragraf</p>
+    <button id="dugme">Change</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#dugme").click(function(){ 
+                $("body").css("background-color","#dbf2c1");
+                $("#prviP").css({"color":"#8ab6fc","font-weight":"bold","font-size":80});
+                $("#drugiP").css({"color":"#f92109","font-weight":"bolder","font-size":70});                               
+            });
+        });
+    </script>
+</body>
+</html>

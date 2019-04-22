@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nasledjivanje2</title>
+</head>
+<body>
+        <script type="text/javascript">
+        function Osoba(ime, prezime){
+                this.ime = ime;
+                this.prezime = prezime;
+            }
+        Osoba.prototype.stampaj = function(){
+            document.write("Osoba: " + this.ime + ", "+ this.prezime + "<br>");
+            }
+            var o = new Osoba("Pera", "Peric");
+            o.stampaj();
+            
+            function Radnik(ime, prezime, radnoMesto){
+                //poziv konstruktora Osoba;Radnik jos ne nasledjuje Osobu
+                Osoba.call(this, ime, prezime);
+                this.radnoMesto = radnoMesto;
+            };
+            //ovim podesavamo da radnik nasledjuje osobu
+            Radnik.prototype = Object.create(Osoba.prototype);
+            //ovim podesavamo da je konstruktor za radnika f-ja Radnik
+            Radnik.prototype.constructor = Radnik;
+            //redefinisemo 
+            Radnik.prototype.stampaj = function(){
+                Osoba.prototype.stampaj.call(this);
+                document.write("Radnik : Radno mesto "+ this.radnoMesto +"<br>");
+            };
+            var r = new Radnik("Mika","Mikic","magacioner");
+            r.stampaj();
+            document.write("o instanceof Osoba: "+ (o instanceof Osoba));
+            document.write("<br>");
+            document.write("o instanceof Radnik: "+ (o instanceof Radnik));
+            document.write("<br>");
+            document.write("r instanceof Osoba: "+(r instanceof Osoba));
+            document.write("<br>");
+            document.write("r instanceof Radnik: "+(r instanceof Radnik));
+            document.write("<br>");
+            document.write("Konstruktor Radnika: "+ Radnik.prototype.constructor+"<br>");
+            document.write("Spisak svojstava i funkcija: "+"<br>");
+            var target = Radnik.prototype;
+            var list = Object.keys(target);
+            for(x in list){
+                document.write(list[x] +" => vrsta: " + typeof(target[list[x]]) + "<br>");
+            }
+            
+        </script>
+</body>
+</html>

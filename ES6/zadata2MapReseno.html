@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function map(niz, transformator) {
+            var povratniNiz = [];
+            for (var i = 0; i < niz.length; i++) {
+                povratniNiz.push(transformator(niz[i]));
+            }
+            return povratniNiz;
+        }
+
+        function uvecaj(broj) {
+            return broj * 2;
+        }
+
+        function umanji(broj) {
+            return broj / 2;
+        }
+        var n = [1, 2, 3, 4, 5];
+        console.log("Orginalno: " + n);
+        console.log("Uvecano: " + map(n, uvecaj));
+        console.log("Umanjeno: " + map(n, umanji));
+        console.log("Korenovano: " + map(n, Math.sqrt));
+    </script>
+</body>
+
+</html>

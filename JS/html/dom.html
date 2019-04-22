@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+</head>
+<body>
+        <p id="pasus"></p>
+        <button onclick="prozor()">klikni me</button>
+    <script >
+        //prvi primer
+    /* var p = document.getElementById("pasus");
+    p.style.color = "#900";
+    p.innerHTML="Novi tekst u pasusu!";
+    window.alert("nastale su neke promene u dokumentu!"); */
+
+    //drugi primer
+    //smallWin = window.open("about:blank","small","width = 100, height=120, toolbar=0, status=0");
+
+    //Primer - Novi prozor
+    
+    function prozor(page, width, height, top, left){
+        var yes = 1;
+        var no = 0;
+        var menubar = no;
+        var scrollbars = no;
+        var locationbar = no;
+        var directories = no;
+        var resizable = no;
+        var statusbar = no;
+        var toolbar = yes;
+        features = " "+ "width= "+ width + ", "+ "height= " + height+ ", "+"top = "+
+        top+", "+"left = "+ left+ ""+(menubar ? ", menubars" : "") + (scrollbars ? ", scrollbars" : "")+
+        (locationbar ? ", locationbar" : "")+(directories ? ", directories" : "")+ 
+        (resizable ? ", resizable" : "")+ (statusbar ? ", status" : "")+ (toolbar ? ", toolbar" : "");
+
+        var reftt = window.open(page, 'fullPopup', features);
+
+    }
+    </script>
+    
+</body>
+</html>

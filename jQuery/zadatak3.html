@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="./jquery-3.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="stil.css">
+    <title>Zadatak 3, jQuery, klik i dvoklik</title>
+</head>
+<body>
+    <p id="par">kliknuti ovde</p>
+    <p id="text"></p>
+    <script>
+        $(document).ready(function(){
+        $("#par").dblclick(function(){
+            $("#text").text("Kliknuto dvaput")
+            });    
+        });
+        $(document).ready(function(){
+        $("#par").click(function(){
+            $("#text").text("Kliknuto jednom")
+            });    
+        });
+    </script>
+</body>
+</html>

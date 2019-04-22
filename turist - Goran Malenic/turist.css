@@ -1,0 +1,22 @@
+#main
+{
+    font-weight: bold;
+    margin: 20px;
+    padding: 200px;
+    padding-top: 20px;
+    width: 60%;
+}
+#dugme
+{
+    float: right;
+    width: 20%;
+    background-color: unset;
+}
+#objasnjenje{
+    margin: 20px;
+    padding: 200px;
+    padding-top: 20px;
+    width: 90%;
+}
+#objasnjenje span{
+color: green;}

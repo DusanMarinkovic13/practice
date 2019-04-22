@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        
+ function Smestaj(naziv,adresa,mesto){
+
+this.naziv=naziv;
+this.adresa=adresa;
+this.mesto=mesto;
+
+this.stampaj=function(){
+    document.write("Stampaj (Smestaj) " + this.naziv + " " + this.adresa + " " + this.mesto + "<br>");
+            };
+};                   
+
+
+var smestaj = new Smestaj("Hotel Park", "Futoska 144","Novi Sad");
+smestaj.stampaj();
+/////
+function Hotel(naziv,adresa,mesto,zvezdice,dodatak){
+    Smestaj.call(this,naziv,adresa,mesto);
+    this.zvezdice=zvezdice;
+    this.dodatak=dodatak;
+   
+};
+
+Hotel.prototype = Object.create(Smestaj.prototype);
+Hotel.prototype.constructor = Hotel;
+
+
+Hotel.prototype.stampaj2 = function() {
+document.write("Stampaj (Hotel)" + "<br>" + this.naziv +"<br> "+ this.adresa +"<br> " + this.mesto +"<br> " + this.zvezdice +"<br />"+ this.dodatak);   
+ };
+
+var ht = new Hotel("Hotel Park", "Futoska 144","Novi Sad","Zvezdica ****","bolje bi za tebe bilo da je BG");
+
+ht.stampaj2();
+
+
+
+       
+
+    </script>
+</head>
+<body>
+        
+</body>
+</html>

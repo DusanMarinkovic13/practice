@@ -1,0 +1,1 @@
+var citamCookie = document.cookie;

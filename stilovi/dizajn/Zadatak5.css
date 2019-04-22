@@ -1,0 +1,43 @@
+#prvi .naslov {
+    background-color: rgb(69, 118, 192);
+}
+
+#prvi {
+    background-color: rgb(250, 250, 252);
+    padding-bottom: 2px;
+}
+
+#unutrasnji {
+    background-color: rgb(132, 185, 202);
+}
+
+#zelenoPlavi {
+    background-color: rgb(180, 234, 238);
+}
+
+#glavni {
+     width: 1650px;
+    height: 860px; 
+    background-image: url(../../stilovi/kylo-ren.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#drugi {
+    background-image: url(../../stilovi/snow.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#treci {
+    background-image: url(../../stilovi/gradient.jpg);
+    background-repeat: repeat-x;
+}
+
+.linija {
+    border-top: 3px solid;
+}
+
+[title|=tanka] {
+    border-top: 1px solid;
+}

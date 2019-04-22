@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Set Map Symbol</title>
+</head>
+<body>
+    <script>
+        const user = {};
+        const email = Symbol();
+
+        user.name = "Fred";
+        user.age = 30;
+        user[email] = "fred@fred.com";
+        Object.keys(user);//Array["name","age"]
+        Object.getOwnPropertyNames(user);//Array["name","age"]
+        JSON.stringify(user);//Array["Fred","30"]
+        //ovako je moguce pristupiti emailu
+        Object.getOwnPropertySymbols(user);//Vraca: Array[Symbol()]
+        Reflect.ownKeys(user);////Vraca: Array["name","age",Symbol()]
+        console.log(Object.keys(user));
+        console.log(Object.getOwnPropertyNames(user));
+        console.log(JSON.stringify(user));
+        console.log(Object.getOwnPropertySymbols(user));
+        console.log(Reflect.ownKeys(user));
+    </script>
+</body>
+</html>

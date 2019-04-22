@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.ts"],"names":[],"mappings":"AAAA,IAAI,KAAK,GAAQ,cAAc,CAAC;AAChC,OAAO,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC","file":"app.js","sourcesContent":["let title:string=\"Zdravo svete\";\r\nconsole.log(title);"]}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>predavannjasa generatorom</title>
+</head>
+<body>
+    <script>
+        const days = [
+            "Pon - predavanja",
+            "Uto - predavanja",
+            "Sre - predavanja",
+            "Cet - predavanja",
+            "Petak - odmor",
+            "Subota - odmor",
+            "Nedelja - odmor"
+        ]; 
+        const brojNedelja = 4;
+        const danaUNedelji = 7;
+        const ukupanBrojPonavljanja = brojNedelja * danaUNedelji;
+        
+
+        
+//-------------------------------------------------------------------------------------------------
+        const dani=[                                                    // razdvojeni radni i neradni dani u konstanti
+            {radni:["ponedeljak","utorak","sreda","cetvrtak"]},
+            {neradni:["petak","subota","nedelja"]}];
+        let radni=dani.map(function(radni){                        // mapiram radni deo nedelje iz zadate konstante
+            return radni["radni"];});
+        let neradni=dani.map(function(neradni){                    // mapiram neradni deo nedelje
+            return neradni["neradni"];});
+        radni = String(radni).split(",");                         // pretvaram string u niz i splitujem ga
+        neradni = String(neradni).split(",").filter(Boolean);     // ovaj filter mora da skine zarez sa pocetka
+
+        function* generator(i) {
+            for(a=1;a<5;a++){
+               for(i=0;i<=3;i++) yield i+1;
+               for(i=0;i<=2;i++) yield y+5;};
+            }
+
+        var gen = generator();
+        for(n=1;n<5;n++){
+            for(i=0;i<=3;i++) console.log('nedelja '+n+' dan '+(gen.next().value)+' : '+radni[i]+' je radni dan');
+            for(y=0;y<=2;y++) console.log('nedelja '+n+' dan '+(gen.next().value)+' : '+neradni[y]+' je neradni dan !!!');
+            };
+
+      //------------------------------------------------------------------------------------
+
+      function* repeatedArray(daniW) {
+        let index = 0;
+        while (true) {
+            yield daniW[index++ % daniW.length];
+            }
+        }
+     const daniW = [
+       "Ponedeljak - radni",
+       "Utorak - radni",
+       "Sreda - radni",
+       "Cetvrtak - radni",
+       "Petak - odmor",
+       "Subota - odmor",
+       "Nedelja - odmor"
+     ];
+     const nekiGenerator = repeatedArray(daniW);
+     const numberOfWeeks = 4;
+     const daysPerWeek = 7;
+
+     const total = numberOfWeeks * daysPerWeek;
+
+     const cycle = [...Array(total)].map(() => ({
+       dani: nekiGenerator.next().value
+     }));
+     console.log(cycle);  
+        
+        
+    </script>
+</body>
+</html>

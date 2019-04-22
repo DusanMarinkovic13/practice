@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>povratna vrednost</title>
+    <script type="text/javascript" >
+    //primer 1 -bez parametara
+        function myFunction(){
+        return ("Hello, have a nice day!" + "<br>")
+        } 
+    function product(a,b){
+        return a*b
+    }
+        </script>
+    
+    
+</head>
+<body>
+    <p>the script in a body section calls function - primer 1</p>
+    <p>the function return text - primer 1</p>
+    <p>the script in a body section calls function with two parameters (4 and 5) - primer 2</p>
+    <p>the function return the product of two parameters - primer 2</p>
+    <script type="text/javascript">
+    // primer 1
+    document.write(myFunction())
+
+    //primer 2
+
+     document.write(product(4,5))
+    </script>
+</body>
+</html>

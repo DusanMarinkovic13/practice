@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Happy birthday</title>
+</head>
+<body>
+   
+        <script type="text/javascript">
+         //adresa za testiranje!
+    //https://designmodo.com/test-javascript-unit/
+    function birthday(happy, name) {
+        document.write("Happy " + happy + " to you!" + "<br>");
+        document.write("Happy " + happy + " to you!" + "<br>");
+        document.write("Happy " + happy + "dear " + name + "!" + "<br>");
+        document.write("Happy " + happy + " to you!" + "<br>");
+    }
+    function sendGift(happy, name, callback) {       
+            //if (typeof callback === "function") {
+                callback(happy, name);
+          //  }
+        }
+        //birthday("Happy birthday ", "Alek");
+        sendGift("birthday ", "Alek", birthday);
+        document.write("<br>");
+        sendGift("New Year ", "Alek", birthday);
+    </script>
+</body>
+</html>

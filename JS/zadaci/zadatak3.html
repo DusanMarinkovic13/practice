@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak 3</title>
+</head>
+<body>
+  
+    
+    <script type="text/javascript">
+    var elementi = ["H1","H2","H3","H4","H5","H6"];
+   
+    function myFunction(x) {
+        var x = prompt("unesite broj od 1 do 6", "");
+        if(x==0 ||x>6){
+            document.write("niste uneli odgovarajuci broj!");
+            return false;
+        }
+        for(var i = 0; i<x; i++){           
+            var h = document.createElement(elementi[i]);
+            var t = document.createTextNode("Ovo je generisani  naslov");
+            h.appendChild(t);
+            document.body.appendChild(h);
+        }  
+    }
+    myFunction();
+    
+    </script>
+</body>
+</html>

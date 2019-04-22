@@ -1,0 +1,199 @@
+    body {
+        display: grid;
+        justify-items: center;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "logo zaglavlje zaglavlje zaglavlje zaglavlje logo1" "menu menu menu menu menu menu" "navigacija  sadrzaj sadrzaj sadrzaj sadrzaj sadrzaj" "navigacija sadrzaj sadrzaj sadrzaj sadrzaj sadrzaj" "podnozje podnozje podnozje podnozje podnozje podnozje";
+        grid-gap: 5px;
+        background-color: aquamarine;
+        padding: 10px;
+        width: 85%;
+        place-content: center;
+    }
+    
+    .grid>div {
+        background-color: rgb(205, 247, 121);
+        text-align: center;
+        font-size: 20px;
+        padding: 10px;
+        border: 2px solid green;
+    }
+    /*ZAGLAVLJE I LOGO*/
+    
+    .logo {
+        grid-area: logo;
+        height: 200px;
+        background-image: url(images/pl_icon.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .logo1 {
+        grid-area: logo1;
+        height: 200px;
+        background-image: url(images/pl_icon.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .zaglavlje {
+        grid-area: zaglavlje;
+        background-image: url(images/watercolour.jpg);
+        background-size: cover;
+        background-repeat: repeat-x;
+    }
+    /*----------------------------------------------*/
+    
+    .navigacija {
+        grid-area: navigacija;
+    }
+    
+    .sadrzaj {
+        grid-area: sadrzaj;
+    }
+    
+    .podnozje {
+        grid-area: podnozje;
+    }
+    /*MENI GALERIJA*/
+    .menuGall{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "home about_us news contacts links empty empty empty empty empty";
+    }
+    .menuGall>div {
+        display: grid;
+        /* background-color: rgb(205, 247, 121); */
+        text-align: center;
+        font-size: 20px;  
+    }
+    /* #items{
+        grid-row: 1;
+        grid-column: 1/7;
+    } */
+
+    #items .items{
+        display: inline;
+        padding: 5px 20px 5px 20px;   
+    }
+    /*-----------------------------------*/
+    /*MENI*/
+    #homeLink{
+        padding-left: 1.4em;
+        padding-right: 1.4em;
+        padding-top: 0.6em;
+        padding-bottom: 0.2em;
+        /* font-size: 1.2em; */
+        border: none;
+    }
+    #homeLink img {
+        width: 1.3em;
+    }
+    
+    #homeLink:hover {
+        background-color:#aecfaf; 
+        border-radius: 5px;   
+    }
+    
+    .menu {
+        grid-area: menu;
+        height: 30px;
+        background-color: rgb(168, 143, 143);
+        background-image: linear-gradient(rgb(95, 92, 92), rgb(230, 230, 172));
+    }
+    
+    ul {
+        list-style-type: none;
+        justify-items: left;
+        margin: -0.1em;
+    }
+    
+    li {
+        display: inline;
+        padding: 3px 10px 3px 10px;
+        margin-right: 5px;
+        border-right: 0.1em solid black;
+        float: left;
+    }
+    
+    a:hover {
+        background-color: white;
+        color: black;
+    }
+    
+    a {
+        padding: 6px;
+        color: white;
+        text-decoration: none;
+    }
+    /*----------------------------------------------------------*/
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropButton {
+        /* background-color: #4CAF50; */
+        color: white;
+        padding: 0.2em 1.4em 0.2em 1.4em;
+        font-size: 1.2em;
+        border: none;
+    }
+    
+    .dropItem {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 4em;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    
+    .dropItem a {
+        color: black;
+        padding: 5px 8px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropItem a:hover {
+        background-color: #ddd;
+    }
+    
+    .dropdown:hover .dropItem {
+        display: block;
+    }
+    
+    .dropdown:hover .dropButton {
+        background-color: #aecfaf;
+        border-radius: 5px;
+    }
+    .dropItem button{
+        border-radius: 5px;
+    }
+    .btn {
+        width: 9.5em;
+        padding: 0.3em;
+        text-align: left;
+    }
+    [value|=newsBtn]{
+        width: 7.8em;
+        padding: 0.3em;
+        text-align: left;
+    }
+    [value|=aboutBtn]{
+        width: 10.3em;
+        padding: 0.3em;
+        text-align: left;
+    }
+    
+    .btn:hover {
+        color: blue;
+        background-color: antiquewhite;
+    }
+    /*------------------------------------------*/

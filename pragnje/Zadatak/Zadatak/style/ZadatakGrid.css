@@ -1,0 +1,267 @@
+* {
+    margin:0;
+    padding:0;
+}
+body{
+    background: linear-gradient(
+        -35deg,
+     black,white,black
+      );
+    font-family:Nunito;
+}
+
+/* ======= Definisanje celog grida ======= */
+.container{
+    display:grid;
+    border-radius:10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'header header header header header header'
+                        'menu  main main main main right'
+                        'menu footer footer footer footer footer'; 
+    grid-gap: 5px; 
+    text-align:center;
+    width:80%;
+    margin:auto;
+    box-shadow: 20px 20px 20px black; 
+}
+
+/* ======= Definisanje grid-area ======= */
+.header{grid-area:header;}
+.menu{grid-area:menu;}
+.main{grid-area:main;}
+.main2{grid-area:right;}
+.footer{grid-area:footer;}
+
+/* ======= Header ======= */
+.header {
+    font-size:2vw;
+    border-radius:10px;
+    font-family:'Pacifico', cursive;
+    background: radial-gradient(
+       red,
+       black,
+       red
+      );
+    color:white;
+}
+
+/* ======= Menu ======= */
+.menu {
+    border:2px solid;
+    background-color: lightblue;
+    border-radius:10px;
+    font-family: 'Cinzel', serif;
+    font-size:1.5vw;
+}
+
+/* ======= Main ======= */
+.main {
+    border:2px solid;
+    background-color: lightblue;
+    place-items:center;
+    border-radius:10px;
+    font-family: 'Acme', sans-serif;
+    text-align: justify;
+    padding:20px;
+}
+
+/* ======= Main2 ======= */
+.main2 {
+    background-color: lightblue;
+    place-items:center;
+    border-radius:10px;
+    font-family: 'Acme', sans-serif;
+    text-align:justify;
+    padding:10px;
+}
+fieldset {
+    padding-left:5px;
+    padding-right:5px;
+}
+button{
+    margin-bottom:5%;
+    margin-left:30%;
+}
+/* ====== Footer ======= */
+.footer {
+    border:2px solid;
+    place-items:center;
+    border-radius:10px;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(
+    35deg,
+    white,
+    gray,
+    white
+  );
+    font-weight: bold;
+    text-shadow: 2px 2px gray;
+    font-size:1.5vw;
+}
+
+/* ======= Podesavanje Menija i Submenija ======= */
+ul{
+    color:black;
+}
+a {
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+li a{
+    display:block;
+    text-decoration: none;
+    padding:0.7em;
+    color:black;
+    font-weight: bold;
+}
+li a.active {
+    background: linear-gradient(
+    35deg,
+    black,
+    red,
+    black
+  );
+color: white;
+}
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+	transition: .8s;
+}
+.mainnav a{
+    display:block;
+}
+.navmenu ul {
+    display:none;
+}
+.navmenu li:hover ul{
+    display:block;
+}
+.navmenu .sub-arrow:after{
+    content: '\203A';
+    float:right;
+    margin-right:20px;
+    transform:rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+}
+.mainnav li:hover .sub-arrow:after{
+    content: '\2039';
+}
+.navmenu ul a:before{
+    content: '\2039';
+}
+
+.mainnav li{
+    position:relative;
+}
+#sub2 a{
+    margin-left:10px;
+}
+.navmenu ul#sub2{
+    display:none;
+    position: absolute;
+    top:0%;
+    left:100%;
+}
+.navmenu .sub1 li:hover #sub2{
+    display:block;
+}
+.navmenu .sub-arrow2:after{
+    content: '\203A';
+    float:right;
+    margin-right:10px;
+
+}
+#sub2{
+    padding-top:10px;
+    font-size:0.7em;
+    background-color:lightblue;
+    color:white;
+    width:80%;
+    opacity: 0.9;
+    box-shadow: 20px 20px 20px black;
+}
+#sub2 li{
+    padding-left:0px;
+    text-align: left;
+}
+.mainnav ul li:hover >a{
+    background-color: #555;
+}
+
+/* ======= Animiranje dugmeta ======= */
+.hvr-radial-in {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    background: #2098D1;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  .hvr-radial-in:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e1e1e1;
+    border-radius: 100%;
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-radial-in:hover, .hvr-radial-in:focus, .hvr-radial-in:active {
+    color: white;
+  }
+  .hvr-radial-in:hover:before, .hvr-radial-in:focus:before, .hvr-radial-in:active:before {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+/* ======= Animacija Naslova ======= */
+.naslov {
+	-webkit-animation: naslov 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: naslov 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+ @-webkit-keyframes naslov {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes naslov {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }

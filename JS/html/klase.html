@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Pravougaonik(w,h){
+            this.sirina = w;
+            this.visina = h;
+            this.obim = function(){
+                return 2*this.sirina + 2*this.visina;
+            }
+        }
+        // Poziva se konstruktor da napravi dva objekta tipa Pravougaonik
+        var prav1 = new Pravougaonik(4,5);
+        var o = prav1.obim();
+        console.log(o);
+        var prav2 = new Pravougaonik(3.5,5.6);
+        var x = prav2.obim();
+        console.log(x);
+
+       /*  function Pravougaonik(w,h){
+            this.sirina = w;
+            this.visina = h;
+            Pravougaonik.prototype.obim = function(){
+                return 2*this.sirina + 2*this.visina;
+            } 
+        } */
+    </script>
+</body>
+</html>

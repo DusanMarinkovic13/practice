@@ -1,0 +1,131 @@
+body{
+    width:960px;
+    font-family: 12px Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    margin-left:20px;
+}
+hr{
+    width:99%;
+}
+/* prvi deo
+.header{
+    border-bottom: gray 1px solid;
+}
+*/
+.logo{
+    padding-top:20px;
+}
+.header ul{
+    padding:0;
+    list-style:none;
+    float:right;
+    margin-top: -80px;
+    word-spacing: 40px;
+}
+.header li {
+    display: inline;
+}
+.header a {
+    color:#fe9b00;
+    text-decoration: none;
+}
+.header span{
+    word-spacing: 0px;
+}
+a:link{
+    color:#fe9b00
+}
+a:visited{
+    color:#fe9b00
+}
+a:active{
+    color:#5d5d5d;
+}
+a:hover{
+    color:#5d5d5d;
+}
+#active{
+    color:#5d5d5d;
+    text-decoration: none;
+}
+/* drugi deo */
+.borderi img{
+    border-left:7px solid darkblue;
+    border-right:7px solid darkblue;
+    border-top:3px solid darkblue;
+    border-bottom:3px solid darkblue;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+/* treci deo */
+.part3{
+    /* padding-top:50px; */
+}
+.container{
+    float:left;
+    text-align:center;
+    width:33%;
+}
+.part3 h2{
+    color:rgb(88, 86, 86);
+}
+table{
+    border:1px solid orange;
+    border-collapse: collapse;
+    width:98%;
+    text-align:left;
+}
+th{
+    color:orange;
+}
+.container hr{
+    width:95%;
+    height: 7px;
+    background-color: gray;
+}
+.container ul{
+    list-style-image: url('img/sep02.gif');
+}
+.container p{
+    padding-left:25%;
+    padding-right:25%;
+    text-align:justify;
+}
+/* cetvrti deo */
+.portfolio{
+    /*border-top: gray 1px solid;
+    border-bottom:gray 1px solid; */
+    width: 200px;
+    height: 250px;
+}
+.portfolio h3{
+    color:rgb(88, 86, 86);
+}
+.img03{
+    position:relative;
+    top: -70px;
+    left:170px;
+    z-index: 2;
+}
+.img04{
+    position: relative;
+    top: -290px;
+    left:490px;
+}
+.img05{
+    position:relative;
+    top:-350px;
+    left:620px;
+    z-index: 2;
+}
+#overlap{
+    width:99%;
+    position:relative;
+    top:-10px;
+    z-index: 1;
+}
+/* footer */
+#footer{
+    background-color: #e2e2e2;
+    text-align:center;
+}

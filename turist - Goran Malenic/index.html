@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="turist.css">  
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <title>Turistička agencija</title>
+</head>
+<body>
+
+    <div id="main"class="mx-auto">
+            
+        <form id="unos" action="" method="POST" onsubmit="dosubmit()">
+            Ime:<br>
+            <input class="form-control"type="text" id="ime" placeholder="Unesi ime" onblur ="capitalize(this)"onKeyup="checkform()"><br>
+            Prezime:<br>
+            <input class="form-control"type="text" id="prezime" placeholder="Unesi prezime" onblur ="capitalize(this)"onKeyup="checkform()"><br>
+            Premium:
+            <input type="checkbox" id="member" onclick="provera()"><br><br>
+            Membership:<br>
+            <select class="form-control" id="type" disabled="disabled" onclick="farba()" onkeyup="farba()">
+                <option value="1">Silver</option>
+                <option value="2">Gold</option>
+                <option value="3">Platinum</option>
+            </select><br>
+            <input id="dugme" type="submit" disabled="disabled">
+        </form>
+            
+        <script>
+
+            // funkcija za prva dva polja, ime i prezime, vraca automatski prvo slovo veliko, ako nije upisano nista vraca prazno
+            function capitalize(form){
+                value = form.value;
+                if (value == ""){return}
+                else{
+                    velikoslovo = '';
+                    value = value.split(' ');
+                for(var i = 0; i < value.length; i++) {
+                    velikoslovo += value[i].substring(0,1).toUpperCase() + value[i].substring(1,value[i].length) + ' ';
+                    }
+                form.value = velikoslovo;}
+            }
+                            
+            // funkcija provere check buttona, enabluje i disabluje listu i poziva funkciju za farbanje dugmeta
+            function provera(){
+                if (document.getElementById("member").checked == true){
+                     document.getElementById("type").disabled = false;
+                     farba();}
+                else {
+                    document.getElementById("type").disabled = 'disabled';
+                    farba();}
+            }
+
+            // funkcija za farbanje dugmeta u zavisnosti od izabranog paketa
+            function farba(){
+                if (document.getElementById("member").checked == true) {
+                    if (document.getElementById("type").value == 1) document.getElementById("dugme").style = " background-color: silver;";
+                    if (document.getElementById("type").value == 2) document.getElementById("dugme").style = " background-color: goldenrod;";
+                    if (document.getElementById("type").value == 3) document.getElementById("dugme").style = " background-color: black; color: white";
+                }
+                else document.getElementById("dugme").style = " background-color: unset;";
+            }
+                
+            // funkcija provere forme, ako su uneseni i ime i prezime enabluje submit button
+            function checkform(){
+                var x = document.forms["unos"]["ime"].value;
+                var y = document.forms["unos"]["prezime"].value;
+                var cansubmit = true;
+                if (x == "" || y == "")cansubmit = false;
+                if (cansubmit) document.getElementById('dugme').disabled = false;
+                else document.getElementById('dugme').disabled = 'disabled';
+            }
+
+            // funkcija svih funkcija - salje podatke na sledecu stranu
+            function dosubmit(){
+                document.forms["unos"].action = "next.html?" +  document.forms["unos"]["ime"].value + document.forms["unos"]["prezime"].value + document.forms["unos"]["member"].checked + " " + document.forms["unos"]["type"].value;
+                window.event.returnValue = true;
+            }
+            
+        </script>
+
+    </div>
+</body>
+</html>
+    
+    

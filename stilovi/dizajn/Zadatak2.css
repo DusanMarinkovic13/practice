@@ -1,0 +1,41 @@
+.tabela{
+    width:30%;
+    border: 2px solid black;
+     border-collapse: collapse; 
+     
+}
+.tabela td{
+    width: 20%
+}
+.narandžasta{
+    background-color: #ff9900;
+    border: 2px solid black;
+    text-align: center;
+}
+#marka{
+    border: 2px solid black;
+    text-align: center;
+}
+.zeleni td{
+    background-color: #AFE678;
+    border: 2px solid black;
+    text-align: center;
+   
+}
+.beli td{
+    border: 2px solid black;
+    text-align: center;
+}
+.noBorder{
+    border-top: hidden;
+    border-left: hidden;
+}
+.zeleni td:nth-child(1){
+    text-align: right;
+}
+.beli td:nth-child(1){
+    text-align: right;
+}
+#clk{
+    text-align: right;
+}

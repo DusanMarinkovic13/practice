@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const animals = [
+            {ime: "Astor",
+            vrsta: "pas",
+            rasa: "doberman",
+            godine: 7,
+            vakcina: true,
+            price: 81660},
+            {ime: "Milka",
+            vrsta: "govedo",
+            rasa: "brown swiss",
+            godine: 2,
+            vakcina: true,
+            price: 161660},
+            {ime: "Belka",
+            vrsta: "govedo",
+            rasa: "simental",
+            godine: 1,
+            vakcina: false,
+            price: 131660},
+            {ime: "Micko",
+            vrsta: "macka",
+            rasa: "persian",
+            godine: 4,
+            vakcina: false,
+            price: 6660},
+            {ime: "Pero",
+            vrsta: "papagaj",
+            rasa: "kakadu",
+            godine: 3,
+            vakcina: false,
+            price: 3960},
+            {ime: "Dzeki",
+            vrsta: "pas",
+            rasa: "doberman",
+            godine: 4,
+            vakcina: true,
+            price: 75660},
+            {ime: "Ferdinand",
+            vrsta: "govedo",
+            rasa: "simental",
+            godine: 2,
+            vakcina: true,
+            price: 331660},
+            {ime: "Fred",
+            vrsta: "riba",
+            rasa: "sijamski borac",
+            godine: 1,
+            vakcina: false,
+            price: 360},
+            {ime: "Panter",
+            vrsta: "macka",
+            rasa: "domaca",
+            godine: 4,
+            vakcina: false,
+            price: 6600},
+            {ime: "Bandit",
+            vrsta: "macka",
+            rasa: "domaca",
+            godine: 2,
+            vakcina: true,
+            price: 3160}
+        ]
+
+        const findMVAnimal = (n,m) => {
+            const newAnimal = n.filter(el => el.vrsta == m).map(el => el.price);
+            newAnimal.sort();
+            console.log("Najskuplja zivotinja vrste " + m + " ima cenu od " + newAnimal[newAnimal.length-1] + "$")
+        }
+        const findName = (n,m) =>{
+            const newAnimal = n.filter(el => el.godine>=3 && el.vakcina ==true).map(el => el.ime);
+            console.log("Imena zivotinja starijih od 3 godine su: "+ newAnimal);
+        }
+        findMVAnimal(animals,"govedo");
+        findMVAnimal(animals, "macka");
+        findName(animals);
+
+    </script>
+</body>
+</html>

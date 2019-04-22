@@ -1,0 +1,6 @@
+Marc Jacobsen   wafle iron  80  2
+Marc Jacobsen   knife   20  4
+Marc Jacobsen   blender 350 3
+Nikita Smith    wafle iron  85  3
+Nikita Smith    pot small   50  2
+Nikita Smith    knife   35  3

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak Map</title>
+</head>
+<body>
+    <script>
+        let items = [
+            {name:"ball", points:2},
+            {name:"coin", points:3},
+            {name:"candy", points:4}
+        ]
+        //const map = new Map(Object.entries(items));
+        let rez = [];
+        items.forEach(element => {
+            rez.push(element.name);
+        });
+        console.log(rez);
+
+        //------------------------------------------------
+        const map = new Map(Object.entries(items));
+        let rez2 =[];
+        map.forEach(element => {
+            rez2.push(element.name);
+        });
+        console.log(rez2);
+        //------------------------------------------------
+        let item = items.map(ime => ime.name);//ime je ovde ime funkcije koja u mapi izlistava vrednosti za name
+            console.log(item);
+        //-----------------------------------------------------------------
+        console.log(items.map(func => func.name));
+        //-----------------------------------------------------------------
+        const z5r = items.map(function(elem){
+            return elem.name;
+        })
+        console.log(z5r);
+        </script>
+</body>
+</html>

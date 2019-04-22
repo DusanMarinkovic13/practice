@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>klase 2</title>
+</head>
+<body>
+    <script>
+        // function Foo(x){
+        //     this.x = x;
+        //     this.y = 432;
+        // }
+        // Foo.prototype.point = function(){
+        //     return "Foo("+ this.x+","+this.y +")";
+        // }
+        
+        // var myFoo = new Foo(99);
+        // console.log(myFoo.point());
+        // vraca Foo(99,432)
+        
+            class Foo{
+                constructor(x,y){
+                    this.x = x;
+                    this.y = 432;
+                }
+                point(){
+                    return "Foo("+ this.x+","+this.y +")";
+                }
+            }
+            let myfoo = new Foo(99,90);
+            console.log(myfoo.point());
+            //vraca Foo(99,432)
+    </script>
+</body>
+</html>

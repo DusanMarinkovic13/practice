@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zadatak 3</title>
+</head>
+
+<body>
+        <h2 id="secret" style="display:none; color: red"></h2>
+        <br><br>
+    <select onclick="animals(value)">
+        <option value="Tigar">Tigar</option> 
+        <option value="Lav">Lav</option>
+        <option value="Gepard">Gepard</option> 
+        <option value="Leopard">Leopard</option>
+ 
+ </select>
+    <input type="text" id="cats">
+    <br><br>
+    <button onclick="selectCat()">select</button>
+   
+
+
+    
+    <script>
+        function animals(cat) {
+            document.getElementById("cats").value = cat;
+            return cat;
+        }
+
+        function selectCat() {
+            document.getElementById("secret").innerHTML = "Izabrana macka je: " + cats.value;
+            document.getElementById("secret").style.display = "block";
+
+        }
+    </script>
+</body>
+
+</html>

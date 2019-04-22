@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Zadatak4</title>
+</head>
+
+<body>
+    <div class="container">
+        <form name="myForm" onsubmit="return(potvrdi());">
+            <div class="form-group">
+                <label for="ime">Ime:</label>
+                <input type="text" class="form-control" id="ime" name="ime" required="required" onblur="capitalize(this)" placeholder="Unesite ime">
+            </div>
+            <div class="form-group">
+                <label for="prezime">Prezime:</label>
+                <input type="text" class="form-control" id="prezime" name="prezime" onblur="capitalize(this)" required="required" placeholder="Unesite prezime">
+            </div>
+            <div class="form-group">
+                <label for="jmbg">Jmbg:</label>
+                <input type="text" class="form-control" id="jmbg" name="jmbg" required="required" minlength="13" maxlength="13" placeholder="Unesite jmbg">
+            </div>
+            <div class="form-group">
+                <label for="registracija">Registracija:</label>
+                <input type="text" class="form-control" id="registracija" name="registracija" required="required" placeholder="Unesite registraciju">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Marka vozila</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="marka" required>
+                <option value=""></option>
+                <option value="1">Volvo</option>
+                <option value="2">Audi</option>
+                <option value="3">VW</option>
+            </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Tip vozila</label>
+                <select class="form-control" id="exampleFormControlSelect2" name="tip" required>
+                <option value=""></option>
+                <option onclick="showMsg(ecoColor1)"  value="m" >Motorni</option>
+                <option onclick="showMsg()" onmouseover="ecoColor()" value="e" name="e"><p>Elektricni</p></option>   
+            </select>
+                <!-- <div id="myCombo" style="width: 100px; height: 20px;"> -->
+
+            </div>
+
+
+            <button id="btnSubmit" type="submit" class="btn btn-primary" onclick="potvrdi()">Submit</button>
+        </form>
+    </div>
+    <p id="message"></p>
+    <script>
+        function potvrdi() {
+            if (document.myForm.ime.value == "") {
+                document.myForm.ime.focus();
+                // document.getElementById("btnSubmit").disabled = true;
+                return false;
+            }
+            if (document.myForm.prezime.value == "") {
+                document.myForm.prezime.focus();
+                //document.getElementById("btnSubmit").disabled = true;
+                return false;
+            }
+            var x = document.myForm.jmbg.value;
+            if (isNaN(x) || x.length != 13) {
+                document.myForm.jmbg.focus();
+                //document.getElementById("btnSubmit").disabled = true;
+                return false;
+            }
+            if (document.myForm.registracija.value == "") {
+                document.myForm.registracija.focus();
+                //document.getElementById("btnSubmit").disabled = true;
+                return false;
+            }
+            if (document.myForm.marka.value == "") {
+                document.myForm.marka.focus();
+                //document.getElementById("btnSubmit").disabled = true;
+                return false;
+            }
+            if (document.myForm.tip.value == "") {
+                document.myForm.tip.focus();
+                //document.getElementById("btnSubmit").disabled = true;
+                return false;
+            }
+            //document.getElementById("btnSubmit").disabled = false;
+            return document.write("Uspesno ste popunili formular!");
+        }
+
+
+        function elektro() {
+            document.getElementById("message").innerHTML = "Eko klasa";
+            document.getElementById("message").style.display = "block";
+            //document.getElementsByName("e") = element;
+        }
+
+        function findEco() {
+            if (document.querySelector('option[value="e"]').selected = true) {
+                return elektro();
+            }
+        }
+
+
+
+        /* function setTip(selectedValue) {
+            if (selectedValue = "e") {
+                document.all.message.innerHTML = "Eko klasa";
+            }
+        }
+ */
+        function capitalize(form) {
+            value = form.value;
+            if (value == "") {
+                return
+            } else {
+                velikoslovo = '';
+                value = value.split(' ');
+                for (var i = 0; i < value.length; i++) {
+                    velikoslovo += value[i].substring(0, 1).toUpperCase() + value[i].substring(1, value[i].length) + ' ';
+                }
+            }
+            form.value = velikoslovo;
+        }
+
+        function ecoColor1(x) {
+            document.getElementById("message") = x;
+            x.style.backgroundColor = "#ffc";
+        }
+
+        function hideMsg() {
+            document.getElementById("message").style.visibility = "hidden";
+        }
+
+
+        function showMsg() {
+            document.getElementById("message").innerHTML = "Eko klasa";
+            document.getElementById("message").style.visibility = "visible";
+        }
+
+        /* let mycombo = Combo.New(document.getElementById("myCombo"));
+        mycombo.options(['motorno','elektricno']);
+        
+        mycombo.onchange = function(e,combo){
+            let val = combo.value;
+            alert(val);
+        } */
+    </script>
+</body>
+
+</html>

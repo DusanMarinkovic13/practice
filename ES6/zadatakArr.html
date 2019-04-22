@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transform array</title>
+</head>
+<body>
+    <script>
+        const songs = [
+            {id: 1, name: "Curl of Burl", artist: "Mastadon"},
+            {id: 2, name: "Oblivion", artist: "Mastadon"},
+            {id: 3, name: "Flying Whales", artist: "Gojira"},
+            {id: 4, name: "L'Enfant Sauvage", artist: "Gojira"}
+        ];
+        //uradjeno sa forEach
+        const pesma = new Map();
+        const lista = [];
+        songs.forEach(song => {
+            lista.push(song.name);
+        });        
+        console.log(lista);
+        //sa Map uradjeno
+        let xa = songs.map(ime => ime.name);
+        console.log(xa);  
+
+         
+        let art = songs.map(singer =>singer.artist);
+        console.log(art);
+//-------------------------------------------------------------
+//pokusao sam da uradim nesto sa setom
+        const pevaci = new Set();
+        
+        pevaci.add(songs.map(singer =>singer.artist));
+        console.log(pevaci);
+        
+        </script>
+</body>
+</html>

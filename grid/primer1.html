@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primer1</title>
+    <style>
+        #main {
+            width: 600px;
+            height: 600px;
+            border: 1px solid blue;
+            display: grid;
+            /* MOZE OVO DA SE KORISTI ZA PORAVNA, SAMO STO 
+            MORA DA SE KORISTI I JUSTIFY-CONTENT I ALIGN-CONTENT */
+            /* justify-content: end;
+            align-content: end; */
+
+            /* justify-content: space-around;
+            align-content: space-around; */
+            
+            /* place-content: space-evenly; */
+            place-content: start;
+            /* place-content: space-between;
+            place-content: space-around;
+            place-content: start;
+            place-content: end;
+            place-content: center; */
+            grid-template-columns: auto auto auto;
+            /* grid-template-columns: 100px 100px 100px; */
+            grid-gap: 5px 5px;
+        }
+        /* #drugi{
+            display: grid;
+            grid-column: 2 /span 2;
+            grid-row: 1;
+            width: auto;
+            background-color: rgb(219, 193, 243);
+
+        } */
+        
+        #drugi {
+            display: grid;
+            /* grid-column: 1 /span 3;
+            grid-row: 1; */
+            grid-column: 1/4;
+            grid-row: 1;
+            background-color: rgb(219, 193, 243);
+            place-items: center;
+        }
+        
+        #drugi span {
+            align-content: center;
+        }
+        
+        #peti {
+            display: grid;
+            grid-row: 1/3;
+            grid-column: 3/4;
+            height: auto;
+            background-color: rgba(243, 184, 112, 0.5);
+        }
+        
+        .divItem {
+            display: grid;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            border: 1px solid black;
+        }
+        
+        .divItem h3 {
+            margin: 0px;
+            background-color: bisque;
+        }
+        
+        #prvi {
+            display: grid;
+            place-items: stretch;
+        }
+        /* #prvi span{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        } */
+        /* #drugi{
+            display: grid;
+            place-items: start;
+        } */
+        
+        #treci {
+            display: grid;
+            place-items: center;
+        }
+        
+        #cetvrti {
+            display: grid;
+            place-items: end;
+        }
+        /* .divItem p{
+            text-align: justify;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="main">
+
+        <div class="divItem" id="prvi">
+            <h3></h3><span>BLOK1</span></h3>
+        </div>
+        <div class="divItem" id="drugi"><span>BLOK2</span></div>
+        <div class="divItem" id="treci">
+            <h3>BLOK3</h3>
+        </div>
+        <!-- <div class="divItem" id="cetvrti"><h3>BLOK4</h3></div> -->
+        <div class="divItem" id="peti">
+            <h3><span>BLOK5</span></h3>
+        </div>
+        <div class="divItem">
+            <h3>BLOK6</h3>
+        </div>
+        <!-- <div class="divItem"><h3>BLOK7</h3></div>
+            <div class="divItem"><h3>BLOK8</h3></div> -->
+
+    </div>
+</body>
+
+</html>

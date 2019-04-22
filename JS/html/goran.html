@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Goran</title>
+</head>
+
+<body>
+    <form>
+
+        <input type="button" value="Klikni me" onclick="prozor()">
+
+    </form>
+
+    <script language="javascript">
+        var i = 0;
+
+        function prozor(page, width, height, top, left) {
+
+            onLoad = setInterval('closemyself()', 2000);
+
+            i++;
+
+            var name = "a" + i;
+
+            var yes = 1;
+
+            var no = 0;
+
+            var menubar = no;
+
+            var scrollbars = no;
+
+            var locationbar = no;
+
+            var directories = no;
+
+            var resizable = no;
+
+            var statusbar = no;
+
+            var toolbar = no;
+
+            features = "" + "width=" + width + "," + "height=" + height + "," + "top=" + top + "," + "left=" + left + "";
+
+            features += "" + (menubar ? ",menubars" : "") + (scrollbars ? ",scrollbars" : "") + (locationbar ? ",location" : "") + (directories ? ",directories" : "") + (resizable ? ",resizable" : "") + (statusbar ? ",statusbar" : "") + (toolbar ? ",toolbar" : "");
+
+            var novi = window.open(page, name, features);
+
+            document.write("<p>This is 'myWindow'</p>" + name);
+
+        }
+
+        function closemyself() {
+
+            prozor();
+
+            name.close();
+
+        }
+    </script>
+</body>
+
+</html>

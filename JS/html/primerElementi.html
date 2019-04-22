@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>primer elementi</title>
+</head>
+<body>
+    <h1>identifikacija i izgled elemenata</h1>
+    <p><input type="button" value="Proba" onclick="proba()"></p>
+    <div id="blok">
+        ovo je neki text unutar DIV bloka
+        <p>Ovo je pasus unutar DIV bloka</p>
+    </div>
+    <div id="ispis"></div>
+    <script>
+        function proba(){
+            var obj = document.getElementById("blok");//obj je referenca na DIV blok sa id="blok"
+            obj.className = "izgled";//pravi klasu izgled
+            obj.style.color = "green";//formatira po klasi
+            //pomocu podobjekta style mozemo da menjamo pojedine CSS atribute, u ovom slucaju color
+            obj.firstElementChild.style.fontWeight = "bold";
+            obj.firstElementChild.id = "pasus";
+            document.getElementById("pasus").style.backgroundColor = "#ffc";
+            var txt = "";//pravimo praznu promenljivu txt
+            txt += 'PRVI OBJEKAT:<b> tip= ' + obj.firstChild.nodeType + ' nodeName= '+ obj.firstChild.nodeName + '</b><br>';
+            //u nju ubacujemo HTML koji sadrzi tip i naziv objekta za prvi podobjekat(obican textualni podobjekat)
+            txt += 'PRVI ELEMENAT: <b>tip= ' + obj.firstElementChild.nodeType + ' nodeName= ' + obj.firstElementChild.nodeName + '</b><br>';
+            //onda radimo to isto ali za prvi podelemenat (to je pasus u DIV bloku)
+            txt += 'PRVI ELEMENAT: <b> tagName= '+obj.firstElementChild.tagName + '</b><br>';
+            //posto je pasus element, za njega mozemo da potrazimo i naziv oznake primecujemo da je za elemente nodeName i tagName isto (za pasus je "P")
+            document.getElementById("ispis").innerHTML = txt;//prikazujemo unutar DIV bloka "ispis"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objekti </title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Robot(name){
+            this.name = name;//svojstvo name dobija vrednost iz parametra pri pozivu funkcije
+            this.energy = 100;//svojstvo energy dobija pocetnu vrednost 100
+            this.charge = function(){//metod objekta
+                //robot puni bateriju
+            }
+        };
+        this.move = function(mX,mY){//metod objekta
+            // robot se krece za mx jedinica l-d 
+        };
+        var r = new Robot("R2D2"); //kreiranje objekta
+
+        function Robot2(name){
+            var prom = 1;
+            this.energy = 100;
+            this.charge = function(){
+                prom++;
+                this.energy++;
+            }
+        }
+        var prvi = new Robot2("Nesto");
+        var drugi = new Robot2("Drugo");
+        prvi.charge.call(drugi);
+        //JS omogucava da pri pozivu definisemo kontekst F-je, odnosno objekat za koji se ona poziva,
+        //koruscenjem metoda  call() i apply(). Ovde smo to primenili kako bismo pozvali metod charge()
+        //prvog objekta za drugi objekat. U tom slucaju, nastaje totalna zbrka - this unutar charge()
+
+    </script>
+</body>
+</html>

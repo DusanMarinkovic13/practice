@@ -1,0 +1,30 @@
+#van{
+    background-color: #5405cd;
+}
+p{
+    background-color: #c0ffff;
+}
+#prvi{
+    background-color: lightblue;
+}
+#drugi{
+    background-image: url(../../stilovi/snow.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+}
+#treci{
+    background-image: url(../../stilovi/gradient.jpg);
+    background-repeat: repeat-x;
+}
+.cetvrti{
+    background-color: white;
+}
+#fiksiran{
+    background-image: url(../../stilovi/kylo-ren.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 400px;
+    background-size: cover;
+}

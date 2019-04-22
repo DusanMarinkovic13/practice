@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objekti 3</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Robot(name){
+            var prom = 1;
+            this.name = name;
+            this.energy = 100;
+            this.charge = function(){
+                prom++;//pristupa promenljivoj prom kao closure
+                this.energy++;//i svojstvu energy, kao svojstvu objekta iz koga je pozvan
+            };
+            this.ispis = function(){//ispis da vidimo kakvi ce biti rezultati
+                console.log(this.name + " "+ prom + " "+ this.energy);
+            };
+        }
+        var prvi = new Robot("PRVI");
+        var drugi = new Robot("DRUGI");// kreiramo objekte
+        var treci = new Robot("TRECI");
+        // pozivamo CHARGE iz objekta PRVI, ali kao kontext prosledjujemo objekat DRUGI samim tim ce se
+        //povecati  svojstvo ENERGY iz objekta DRUGI ali ce se povecati i promenljiva PROM iz objekta PRVI,
+        // posto je funkcija na koju referira svojstvo PRVI.CHARGE kao CLOSURE vezana za promenljivu
+        //PROM iz objekta PRVI
+        prvi.charge.call(drugi);
+        //kontrolni objekat - ako se radi onako kako je zamisljeno, povecace energiju i prom u objektu
+        treci.charge();
+        //ovde vidimo rezultat
+        prvi.ispis();
+        drugi.ispis();
+        treci.ispis();
+    
+    </script>
+
+</body>
+</html>

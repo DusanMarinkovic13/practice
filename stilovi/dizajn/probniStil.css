@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+    color: red;
+    background-color: rgb(47, 161, 255);
+}
+
+h2 {
+    text-align: right;
+    color: green;
+    background-color: yellow;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#prviDiv {
+    background-color: rgb(222, 248, 166)
+}
+
+p {
+    text-align: justify;
+    color: blue;
+}

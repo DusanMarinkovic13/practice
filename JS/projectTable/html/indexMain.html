@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <title>Main page</title>
+</head>
+
+<body>
+    <div class="container">
+        <form name="myForm" action="" method="POST" onsubmit="dosubmit()">
+            <div class="form-group ">
+                <label for="idNumber ">Id broj:</label>
+                <input type="text " class="form-control " id="idNumber " name="idNumber " required="required " placeholder="Unesite id broj ">
+            </div>
+            <div class="form-group ">
+                <label for="ime ">Ime:</label>
+                <input type="text " class="form-control " id="ime " name="ime " required="required " placeholder="Unesite ime ">
+            </div>
+            <div class="form-group ">
+                <label for="prezime ">Prezime:</label>
+                <input type="text " class="form-control " id="prezime " name="prezime " required="required " placeholder="Unesite prezime ">
+            </div>
+            <div class="form-group ">
+                <label for="jmbg ">Jmbg:</label>
+                <input type="text " class="form-control " id="jmbg " name="jmbg " required="required " minlength="13 " maxlength="13 " placeholder="Unesite jmbg ">
+            </div>
+
+            <button id="btnSubmit " type="submit " class="btn btn-secondary ">Submit</button>
+        </form>
+    </div>
+    <script type="text/javascript ">
+        function potvrdi() {
+            var y = document.myForm.idNumber.value;
+            if (isNaN(y) || y.length != 6) {
+                document.myForm.idNumber.focus();
+                return false;
+            }
+            if (document.myForm.ime.value == " ") {
+                document.myForm.ime.focus();
+                return false;
+            }
+            var ime = myForm.ime.value;
+            if (ime[0] != ime[0].toUpperCase()) {
+                alert("Ime mora poceti velikim slovom! ");
+                return false;
+            }
+            if (document.myForm.prezime.value == " ") {
+                document.myForm.prezime.focus();
+                return false;
+            }
+            var prezime = myForm.prezime.value;
+            if (prezime[0] != prezime[0].toUpperCase()) {
+                alert("Prezime mora poceti velikim slovom! ");
+                return false;
+            }
+            var x = document.myForm.jmbg.value;
+            if (isNaN(x) || x.length != 13) {
+                document.myForm.jmbg.focus();
+                return false;
+            }
+        }
+
+        function dosubmit() {
+            document.forms["myForm"].action = "indexTable.html?" + document.forms["myForm"]["idNumber"].value + document.forms["myForm"]["ime"].value + document.forms["myForm"]["prezime"].value + " " + document.forms["myForm"]["jmbg"].value;
+            window.event.returnValue = true;
+        }
+
+        function dosubmit() {
+            document.forms["unos"].action = "next.html?" + document.forms["unos"]["ime"].value + document.forms["unos"]["prezime"].value + document.forms["unos"]["member"].checked + " " + document.forms["unos"]["type"].value;
+            window.event.returnValue = true;
+        }
+
+
+        /* onSubmit="write2file(this.myForm)" function write2file(myForm){ var fso=n ew ActiveXObject( "Scripting.FileSystemObject"); var fileLoc="../csv/tabelaTest.csv" ; var file=f so.CreateTextFile(fileLoc, true); file.writeline(myForm.idNumber.value+
+            ","+myForm.ime.value+ ","+myForm.prezime.value+ ","+myForm.jmbg.value); file.Close(); alert( 'File created successfuly at location '+ fileLoc); } */
+        /* function dosubmit(){ document.forms[ "myForm"].action="indexTable.html?" + document.forms[
+                   "myForm"][ "idNumber"].value + " " + document.forms[ "myForm"][ "ime"].value + " " + document.forms[ "myForm"][ "prezime"].value + " " + document.forms[ "myForm"][ "jmbg"].value; window.event.returnValue=t rue; } */
+    </script>
+</body>
+
+</html>

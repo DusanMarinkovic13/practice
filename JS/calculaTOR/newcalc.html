@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+     td img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50px;
+
+        }
+table {
+  border: 3px solid grey;
+  outline: 2px solid darkgrey;
+  border-radius: 3px;
+        }
+    </style>
+  <script>
+      //unos brojeva na dugme
+      function myFunction1() {
+       
+       document.getElementById("rezultat").value += 1;
+   }
+   function myFunction2() {
+       
+       document.getElementById("rezultat").value += 2;
+   }
+   function myFunction3() {
+       
+       document.getElementById("rezultat").value += 3;
+   }
+   function myFunction4() {
+       
+       document.getElementById("rezultat").value += 4;
+   }
+   function myFunction5() {
+       
+       document.getElementById("rezultat").value += 5;
+   }
+   function myFunction6() {
+       
+       document.getElementById("rezultat").value += 6;
+   }
+   function myFunction7() {
+       
+       document.getElementById("rezultat").value += 7;
+   }
+   function myFunction8() {
+       
+       document.getElementById("rezultat").value += 8;
+   }
+   function myFunction9() {
+       
+       document.getElementById("rezultat").value += 9;
+   }
+   function myFunction0() {
+       
+       document.getElementById("rezultat").value += 0;
+   }
+   //proverava postojanje "." u polju i dozvoljava upis iskljucivo ako
+   //simbol nije ranije unesen, moze se uneti samo jedared
+   function myFunctionpoint() {
+    var prvibroj = document.getElementById("rezultat").value;
+    if (prvibroj.includes('.')){
+    
+      }else{
+  
+  document.getElementById("rezultat").value += ".";
+      }
+   }
+        
+  
+   //proverava je li prazno polje za unos prvog broja
+   //u slucaju da jeste dodaje samo predznak "-" i ne registruje operaciju
+   //kao oduzimanja a time i ne upisuje
+   //vrednost u local storage dok u slucaju da ste vec uneli neki broj
+   //njegovu vrednost prosledjuje u local storage kao i operacija oduzimanja
+   //bez negativnog predznaka
+   function myFunctionnegative() {
+    var prvibroj = document.getElementById("rezultat").value;
+       if (prvibroj==""){
+       document.getElementById("rezultat").value += "-";
+   }else{
+    localStorage.setItem("prvi", prvibroj );
+            document.getElementById("rezultat").value="";
+   }
+   }
+  
+
+//funkcija koja cuva prvi unesen broj i resetuje polje
+
+//osim u slucaju kada ste vec dodelili negativni predznak
+//u tom slucaju da nije provereno, negativni predznak bi protumacio
+//kao operaciju oduzimanja i zajebo sve
+            function locstormake(){
+            var prvibroj = document.getElementById("rezultat").value;
+            if(prvibroj!=="-"){
+            localStorage.setItem("prvi", prvibroj );
+            document.getElementById("rezultat").value="";
+            
+            }
+            }
+//funkcija koju pokrece pritiskom na "=" koja cuva drugi unesen  broj
+//i resetuje polje za unos
+             function locstormakeqv(){
+            
+            var drugibroj = document.getElementById("rezultat").value;
+            localStorage.setItem("drugi", drugibroj );
+            document.getElementById("rezultat").value="";
+             }
+//izvlaci skladistene podatke iz local storge
+             function getlocstormake(){
+                var prvi1 = localStorage.getItem("prvi");
+                var operacija = localStorage.getItem("operacija");
+                var drugi1 = localStorage.getItem("drugi");
+                 document.getElementById("broj1").innerHTML ="broj1: " +prvi1;
+                 document.getElementById("operacija").innerHTML = "operacija: "+operacija;
+                 document.getElementById("broj2").innerHTML = "broj2: "+drugi1;
+             }
+/**/
+//na pritisak cuva informaciju o izabranoj operaciji
+function operacijazbir(){
+  var zbir="+";
+    localStorage.setItem("operacija", zbir );
+}
+
+
+function operacijarazlika(){
+    var prvibroj = document.getElementById("rezultat").value;
+if (prvibroj!==""){
+  var razlika="-";
+    localStorage.setItem("operacija", razlika );
+//opet petlja za proveru negativnog predznaka koja ce
+//potvrditi operaciju oduzimanja samo u slucaju da polje za unos nije prazan
+}
+}
+function operacijaproizvod(){
+  var proizvod="*";
+    localStorage.setItem("operacija", proizvod );
+}
+function operacijakolicnik(){
+  var kolicnik="/";
+    localStorage.setItem("operacija", kolicnik );
+}
+
+// obavljanje operacija
+function operacija() {
+    var prvi1 = localStorage.getItem("prvi");
+    var operacija = localStorage.getItem("operacija");
+    var drugi1 = localStorage.getItem("drugi");
+    if (operacija=="+"){
+var zbir=parseFloat(prvi1)+parseFloat(drugi1);
+document.getElementById("rezultat").value = zbir;
+    }else if(operacija=="-"){
+        var razlika=parseFloat(prvi1)-parseFloat(drugi1);
+document.getElementById("rezultat").value = razlika;
+    }else if(operacija=="*"){
+        var proizvod=parseFloat(prvi1)*parseFloat(drugi1);
+document.getElementById("rezultat").value = proizvod;
+    }else if(operacija=="/"){
+        var kolicnik=parseFloat(prvi1)/parseFloat(drugi1);
+document.getElementById("rezultat").value = kolicnik;
+    }
+}
+  
+  </script>
+</head>
+<body>
+    <form>
+    <table style="margin:0 auto" >
+        <tr>
+            <td colspan="4"><input type="text" id="rezultat" name="name" disabled="disabled"
+                minlength="1" maxlength="8" size="10" style="width: 95%" ></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="1" onclick="myFunction1(),formdata()" >
+            </td>
+            <td>
+                <input type="button" value="2" onclick="myFunction2()" >
+            </td>
+            <td>
+                <input type="button" value="3" onclick="myFunction3()" >
+            </td>
+            <td>
+                <input id = "plus" type="button" value="+" onclick='locstormake(),operacijazbir()' >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4" onclick="myFunction4()" >
+            </td>
+            <td>
+                <input type="button" value="5" onclick="myFunction5()" >
+            </td>
+            <td>
+                <input type="button" value="6" onclick="myFunction6()" >
+            </td>
+            <td>
+                <input type="button" style="width: 100%" value="-" onclick='operacijarazlika(),myFunctionnegative()' >
+         
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="7" onclick="myFunction7()" >
+            </td>
+            <td>
+                <input type="button" value="8" onclick="myFunction8()" >
+            </td>
+            <td>
+                <input type="button" value="9" onclick="myFunction9()" >
+            </td>
+            <td>
+                <input type="button" style="width: 100%" value="*" onclick='locstormake(),operacijaproizvod()' >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="0" onclick="myFunction0()" >
+            </td>
+            <td>
+                <input type="button" style="width: 100%" value="." onclick="myFunctionpoint()" > 
+            </td>
+            <td >
+                <input  style="width: 100%" type="button" value="=" onclick="locstormakeqv(),operacija()" >
+            </td>
+            
+            <td>
+                <input type="button" style="width: 100%" value="/" onclick='locstormake(),operacijakolicnik()' >
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                    <input type="reset" style="width: 100%">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <img src="madein.jpg" alt="kinezija">
+        </td>
+        </tr>
+     
+    </table>
+    </form>
+    
+    <input type="button" onclick="getlocstormake()" value="Racunica">
+    <input type="button" onclick="localStorage.clear();" value="Reset local store">
+    <p id="broj1"></p>
+    <p id="operacija"></p>
+    <p id="broj2"></p>
+    <p id="krajnji"></p>
+</body>
+</html>

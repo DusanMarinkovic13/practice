@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map primer</title>
+</head>
+
+<body>
+    <script>
+        var person = new Map();
+
+        person.set('ime', 'Dragoljub');
+        person.set('prezime', 'Zivanovic');
+        person.set('posao', 'programer');
+        console.log(person.has('ime'));
+        console.log(person.size);
+        person.delete('posao');
+        console.log(person.size);
+        var result = person.get('prezime');
+        console.log(result);
+        console.log(person.keys());
+        console.log(person.values());
+        console.log(person.entries());
+        person.clear();
+        console.log(person.size);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+/*flexbox*/
+.row-flex{
+    margin: 10px auto;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.row-flex div{
+    border: 1px dashed grey;
+    flex: 1 1 120px;
+    text-align: center;
+    /*padding: 12px;*/
+}
+/*grid*/
+.row-grid{
+    margin: 10px auto;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+.row-grid div{
+    border: 1px dashed grey;
+    text-align: center;
+    /*padding: 12px;*/
+}

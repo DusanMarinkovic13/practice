@@ -1,0 +1,162 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background: #394753;
+    font-size: 20px;
+}
+
+/* Veliki glavni div */
+
+#main {
+    width: 95%;
+    margin: auto;
+}
+
+/* Logo */
+
+#logo {
+    background: lightgray;
+    width: 100%;
+}
+
+#logo img{
+    width: 9%;
+    padding: 5px 0 5px 20px;
+}
+
+/* Navigacija/Meni */
+
+nav {
+    width: 100%;
+    height: 35px;
+    font-family: Georgia,serif;
+}
+
+nav ul {
+    float: right;
+}
+
+nav li {
+    float: left;
+    display: inline;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+nav li:last-child {
+    margin: 0 0 0 10px;
+}
+
+nav a {
+    color: #fff;
+}
+
+nav a:hover {
+    color: #000;
+    background: #fff;
+}
+
+li:hover {
+    background: #fff;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+/* Veliki img */
+
+#bg {
+    border-top: 3px solid #fff;
+}
+
+#bg img {
+    width: 100%;
+    height: 600px;
+}
+
+/* Sekcija sa 3 diva (Lorem Ipsum) */
+
+#section3img {
+    background: #fff;
+    margin-top: -5px;
+    height: 350px;
+    padding: 20px 0;
+    margin-bottom: 10px;
+}
+
+#section3img div{
+    float: left;
+    width: 30%;
+    margin: 0 1.6%;
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+#section3img p {
+    font-family: Tahoma,sans-serif;
+    font-size: 14px;
+}
+
+#section3img img{
+    width: 25%;
+    float: right;
+    border: 1px solid #000;
+    margin-top: -20px;
+    margin-right: -20px;
+}
+
+#section3img a:link{
+    color: blue;
+}
+
+#section3img a:visited {
+    color: blue;
+}
+
+/* Poslednji ukviren div sa 4 slike */
+
+#lastdiv {
+    border: 5px double gray;
+    border-radius: 20px;
+    padding: 30px 70px;
+    height: 320px;
+}
+
+#lastdiv img{
+    width: 300px;
+    height: 250px;
+}
+
+#first {
+    float: left;
+    
+}
+
+#last {
+    float: right;
+    
+}
+
+.margin {
+    margin: 0 20px;
+}
+
+
+/* Footer */
+
+#footer {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#footer p{
+    color: #fff;
+}

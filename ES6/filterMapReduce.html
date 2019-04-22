@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filter Map Reduce funkcije</title>
+</head>
+
+<body>
+    <script>
+        //kombinovanjem f-ja filter, map i reduce izracunati prosecnu vrednost svih vozila tipa SUV
+
+        const vehicles = [{
+            make: 'Honda',
+            model: 'CR-V',
+            type: 'suv',
+            price: 24045
+        }, {
+            make: 'Honda',
+            model: 'Accord',
+            type: 'sedan',
+            price: 22455
+        }, {
+            make: 'Mazda',
+            model: 'Mazda 6',
+            type: 'sedan',
+            price: 24195
+        }, {
+            make: 'Mazda',
+            model: 'CX-9',
+            type: 'suv',
+            price: 31520
+        }, {
+            make: 'Toyota',
+            model: '4Runner',
+            type: 'suv',
+            price: 34210
+        }, {
+            make: 'Toyota',
+            model: 'Sequoia',
+            type: 'suv',
+            price: 45560
+        }, {
+            make: 'Toyota',
+            model: 'Tacoma',
+            type: 'truck',
+            price: 24320
+        }, {
+            make: 'Ford',
+            model: 'F-150',
+            type: 'truck',
+            price: 27110
+        }, {
+            make: 'Ford',
+            model: 'Fusion',
+            type: 'sedan',
+            price: 22120
+        }, {
+            make: 'Ford',
+            model: 'Explorer',
+            type: 'suv',
+            price: 31660
+        }];
+
+
+        const findTypePriceAvg = (n, e) => {
+            return console.log(Math.round(n.filter(el => el.type === e).map(x => x.price).reduce((prev, next, index, array) => {
+                return prev + (next / array.length);
+            }, 0)));
+        }
+        findTypePriceAvg(vehicles, "suv");
+        findTypePriceAvg(vehicles, "sedan");
+        findTypePriceAvg(vehicles, "truck");
+        //---------------------------------------------------------------------
+        const findMarkAvg = (n, m) => {
+            return console.log("Prosecna cena automobila proizvodjaca " + m + " iznosi " + Math.round(n.filter(el => el.make === m).map(x => x.price).reduce((prev, next, index, array) => {
+                return prev + (next / array.length);
+            }, 0)) + " $");
+        }
+        findMarkAvg(vehicles, "Ford");
+        findMarkAvg(vehicles, "Toyota");
+        findMarkAvg(vehicles, "Mazda");
+        findMarkAvg(vehicles, "Honda");
+        //---------------------------------------------------------------------
+        /* function maxMark(n, m) {
+            const marka = [];
+            let maxi;
+            n.forEach(element => {
+                if (element.make === m) {
+                    marka.push(element);
+                }
+            });
+            for (let i = 0; i < marka.length(); i++) {
+                if (marka[i].price > marka[0].price) {
+                    maxi = marka[i].price;
+                } else {
+                    maxi = marka[0].price;
+                }
+            }
+
+            return marka.model + " " + marka.price;
+        }
+        console.log(maxMark(vehicles, "Ford")); */
+
+
+
+        const findMarkMax = (n, m) => {
+            const newV = n.filter(el => el.make === m).map(x => x.price);
+            //mod(newV);
+            newV.sort();
+            //console.log(newV);
+            return console.log("Najskuplji model marke " + m + " kosta " + newV[newV.length - 1] + " $.");
+        }
+        findMarkMax(vehicles, "Ford");
+        findMarkMax(vehicles, "Toyota");
+        findMarkMax(vehicles, "Mazda");
+        findMarkMax(vehicles, "Honda");
+        //---------------------------------------------------------------------
+
+        var z8r = vehicles.filter(x => x.type == "suv") //od niz vehicles pravi podniz koji sadrzi samo vozila tipa "suv"
+
+        .map(x => x.price) //mapiram niz suv vozila na niz sa njihovim cenama
+
+        .reduce((prev, next, index, array) => { //nad nizom cena suv vozila vrsim redukciju
+
+            return prev + (next / array.length); //asocijativnost (a + b) / c == (a/c) + (b/c)
+
+        }, 0);
+
+        console.log("Resenje : " + z8r);
+
+        //https://www.udacity.com/course/react-nanodegree--nd019
+        //https://www.viser.edu.rs/uploads/2018/05/11.pdf
+        //https://www.codeofaninja.com/2016/07/react-crud-tutorial.html
+        //https://stormpath.com/blog/crud-application-react-spring-boot-user-authentication
+        //https://developer.okta.com/blog/2018/07/19/simple-crud-react-and-spring-boot
+    </script>
+</body>
+
+</html>

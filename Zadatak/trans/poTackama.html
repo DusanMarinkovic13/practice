@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kretanje po tackama</title>
+</head>
+<body>
+    <svg>
+        <path id="curve" d="M 10 100 C 200,10 400,100 10,100"
+        stroke="black" fill="none" stroke-width="5"/>
+        <ellipse cx="7" cy="-5" rx="20" ry="10" fill="orange" stroke="#44aa88">
+        <animateMotion dur="2s" rotate="auto" repeatCount="indefinite">
+            <mpath xlink:href="#curve"/>
+        </animateMotion></ellipse>
+    </svg>
+</body>
+</html>

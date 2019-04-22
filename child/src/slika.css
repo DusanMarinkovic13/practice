@@ -1,0 +1,12 @@
+.app{
+    background-image: url("https://images.wallpaperscraft.com/image/forest_fog_trees_126479_1920x1080.jpg");   
+  }
+#forma{
+  align-content: center;
+  background-color: yellowgreen;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+#btnSubmit{
+  margin: 1em;
+}

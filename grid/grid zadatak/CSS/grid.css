@@ -1,0 +1,96 @@
+#container
+{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    border:2px blue solid;
+    height: auto;
+    text-align: center;
+    
+    
+}
+#header
+{
+    display: grid;
+    grid-column: 1/span 6;
+    border:2px blue solid; 
+    place-content: center;
+    font: bold;
+
+}
+#menu
+{
+    display: grid;
+    place-content: center;
+    grid-row: 2/span 2; 
+    border:2px blue solid; 
+}
+#main
+{   
+    padding: 20px;
+    display: table;
+    grid-column: 2/span 3; 
+    border:2px blue solid; 
+    box-sizing: border-box;
+}
+#right
+{
+    display: grid;
+    place-content: center;
+    grid-column: 5/span 2; 
+    border:2px blue solid; 
+}
+#footer
+{
+    display: grid;
+    place-content: center;
+    border:2px blue solid;
+    grid-column: 2/span 5; 
+}
+
+div.gallery {
+padding: 10px;
+border: 1px solid #ccc;
+box-shadow: 10px 10px 5px grey;
+}
+
+div.gallery:hover img{
+
+transform: scale(1.5);
+transition: 2s;
+}
+
+div.gallery:hover {
+    transition: 2s;
+    background-color: chartreuse;
+    box-shadow: 10px 10px 5px red;
+    }
+
+div.gallery img {
+width: 100%;
+height: auto;
+}
+
+div.desc {
+padding: 15px;
+text-align: center;
+font-family: 'Aldrich', sans-serif;
+}
+
+* {
+box-sizing: border-box;
+}
+
+.responsive {
+margin:1%;
+padding: 0 6px;
+float: left;
+width: 21.99999%;
+}
+
+@media only screen and (max-width: 1024px) {
+.responsive {width: 49.99999%; margin: 6px 0; }
+}
+
+@media only screen and (max-width: 512px) {
+.responsive { width: 100%;}
+}

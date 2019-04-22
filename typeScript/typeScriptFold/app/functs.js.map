@@ -1,0 +1,1 @@
+{"version":3,"sources":["functs.ts"],"names":[],"mappings":"AAAA,IAAI,YAAY,GAAG,UAAC,MAAM,IAAK,OAAA,OAAO,CAAC,GAAG,CAAC,MAAM,CAAC,EAAnB,CAAmB,CAAC;AACnD,IAAI,KAAK,GAAG,cAAM,OAAA,OAAO,CAAC,GAAG,EAAE,EAAb,CAAa,CAAC","file":"functs.js","sourcesContent":["let ispisiPoruku = (poruka) => console.log(poruka);\r\nlet ispis = () => console.log();"]}

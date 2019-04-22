@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primer 2 - callback</title>
+</head>
+<body>
+    <script type="text/javascript">
+        obj = document.createElement("div");
+        obj.innerHTML = "BLOK";
+        obj.addEventListener("click",klik);//definisemo evenHandler
+        document.body.appendChild(obj);
+        function klik(){//deklaracija eventHandler f-je
+            this.style.color = "#f00";
+            this.style.backgroundColor = "#ffc";
+        }
+        /* kreirali smo  DIV blok, zadali smo mu text "blok" i dodali f-ju klik() koja reaguje na
+        dogadjaj click, pomocu metoda addEvantListener().Samim tim f-ja
+        */
+        </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = 1;
+        switch(x){
+            case 0:
+            let foo = 5;
+            break;
+            case 1:
+            let foo = 10;
+            break;
+        }
+        //ovo gore ne radi je LET ne moze da se redeklarise u domenu viticastih zagrada 
+        let x = 1;
+        switch(x){
+            case 0:{
+            let foo = 5;
+            break;
+        }
+            case 1:{
+            let foo = 10;
+            break;
+        }
+        // ovo ce raditi zato sto je svaki CASE izolovan u viticastu zagradu i let ne predstavlja problem
+        }
+        </script>
+</body>
+</html>

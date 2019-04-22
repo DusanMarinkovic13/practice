@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 900px;
+    background-color: #394753;
+}
+
+#prvi {
+    width: 700px;
+    height: 100%;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#logo {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    padding-bottom: 10px;
+}
+
+img {
+    width: 150px;
+    height: 100px;
+}
+
+#meni {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    border-left: 1px solid black;
+    float: left;
+}
+
+a:hover {
+    background-color: white;
+    color: black;
+}
+
+.bla {
+    border-right: 1px solid black;
+}
+
+a {
+    padding: 9px;
+    color: white;
+}
+
+#clr {
+    clear: both;
+}
+
+#slika img {
+    width: 700px;
+    height: 350px;
+    border-top: 3px solid white;
+}
+
+#tri {
+    background-color: white;
+    height: 360px;
+    width: inherit;
+    margin-top: -5px;
+}
+
+.sl {
+    width: 210px;
+    height: 300px;
+    border: 1px solid black;
+    float: left;
+    margin: 10px 9px;
+    background-color: white;
+    font-family: Tahoma;
+    font-size: 12px;
+    line-height: 16px;
+    position: relative;
+}
+
+.us {
+    position: relative;
+    top: -20px;
+    right: -10px;
+    height: 100px;
+    width: 80px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+#par {
+    text-align: justify;
+    margin-left: 2px;
+}
+
+.sl .tres {
+    float: right;
+}
+
+.fotke {
+    border: 2px double gray;
+    border-radius: 2%;
+    height: 140px;
+    width: 696px;
+}
+
+.fotke .uno {
+    margin-top: 15px;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    margin-left: 10px;
+}
+
+.fotke .dos {
+    margin-top: 15px;
+    height: 100px;
+    width: 100px;
+    float: right;
+    line-height: 100px;
+    margin-right: 10px;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+    width: 700px;
+}

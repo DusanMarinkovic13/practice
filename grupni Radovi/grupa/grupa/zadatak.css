@@ -1,0 +1,119 @@
+body {
+    width: 900px; 
+    background-color: #394753;
+       
+}
+#window {
+    width: 700px;
+    margin: auto;
+    background-color: #394753;
+    
+}
+.head {
+    background-color: white;
+}
+
+.logo {width: 120px;
+        height: 68px;
+        padding-left: 15px;
+    
+}
+
+nav{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    float: right;
+    
+}
+nav ul{
+    margin: auto;
+    list-style: none;
+    justify-content: end;
+}
+nav li{
+    display: inline;
+    border-left: 1px solid #000;
+    padding-left: 10px;
+    padding-right: 10px;    
+    
+   
+}
+nav a {color: #fff;}
+nav a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.slika1 {
+    border-top: 2PX SOLID #fff;
+    margin: 0px;
+    display: flex;
+    
+}
+
+.pic {
+   
+    width: 33%;
+   margin: 3px;
+}
+.box { 
+    background-color: #fff;
+     width: 700px; 
+     box-sizing: border-box;
+     padding-left: 8px;
+     padding-bottom: 20px;
+       
+ }
+ .box1{
+    display: inline-block;
+    width: 31%;
+    text-align: left;
+    position: relative;
+    padding: 3px;
+    
+}
+.box1 p {
+    border:1px groove;
+    margin: 7px; 
+    padding: 2px;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    
+}
+
+.box1 img{
+    border: 1px groove;
+    float: right;
+    
+}
+.box2 {
+    border: 6px double #795c34;
+    border-radius: 10px;
+   position: sticky;
+   margin-top: 3px;
+}
+
+
+
+.pic1 {width: 100px;
+        margin: 15px 15px 15px 45px;
+}
+
+.pic2 {width: 100px;
+        margin: 15px 80px 15px 0px;
+}
+
+.pic3 {width:100px;
+        margin:15px 15px 15px 40px;    
+}
+
+.pic4 {width: 120px;
+        margin: 0px 45px 15px 0px;
+}
+
+footer {color: white;
+        text-align: center;
+        margin-top: 3px;
+}
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Closure</title>
+</head>
+<body>
+        <script type="text/javascript">
+            function nad(){
+                var broj = 0;//lokal promenljiva nadfunkcije
+                function fun(){// unutrasnja F-ja
+                    broj++;//ima pristup promenljivoj svoje nadfunkcije
+                    console.log("Broj: "+ broj);//ispis rezultata u konzoli
+                }
+            
+            window.setTimeout(fun, 5000);//izvlacimo podfunkciju kao callback
+            fun();//poziv podfunkcije
+            console.log("Nadfunkcija je zavrsena");//ovde naglasavamo da je F-ja gotova
+            }
+        nad();//ovde pocinje - pozivom F-je nad()
+            </script> 
+</body>
+</html>

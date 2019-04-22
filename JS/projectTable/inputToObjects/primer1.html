@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>data input to objects</title>
+</head>
+<body>
+        <!-- Allegiance: <input type ="text" id = "allegiance"><br/><br/>
+        Armor:  <input type ="text" id = "armor"><br/><br/>
+        Weapon(s): <input type ="text" id = "weapon"><br/><br/>
+        <input type = "button" id="button" onclick="hire()" value = "Submit"><br/>
+        <p id="output"></p> -->
+        <form name="myForm" action="primer1next.html" method="POST" onsubmit="doPerson()">
+                <div class="form-group">
+                        <label for="idNumber">Id broj:</label>
+                        <input type="text" class="form-control" id="idNumber" name="idNumber" required="required" placeholder="Unesite id broj">
+                    </div>
+                    <div class="form-group">
+                        <label for="ime">Ime:</label>
+                        <input type="text" class="form-control" id="ime" name="ime" required="required" placeholder="Unesite ime">
+                    </div>
+                    <div class="form-group">
+                        <label for="prezime">Prezime:</label>
+                        <input type="text" class="form-control" id="prezime" name="prezime" required="required" placeholder="Unesite prezime">
+                    </div>
+                    <div class="form-group">
+                        <label for="jmbg">Jmbg:</label>
+                        <input type="text" class="form-control" id="jmbg" name="jmbg" required="required" minlength="13" maxlength="13" placeholder="Unesite jmbg">
+                    </div>
+                    <div>
+                        <input type = "button" id="button" onclick="callPreson()" value = "Submit">
+                    </div>
+        </form>
+        <p id="rez"></p>
+
+
+<script type="text/javascript">
+    var soldiers = [];
+
+/* function Soldier(allegiance, armor, weapon){
+  this.allegiance = allegiance;
+  this.armor = armor;
+  this.weapon = weapon;
+  this.doReport = function () {
+    return this.armor + ' and ' + this.weapon;
+  } 
+} */
+//person
+var persons = [];
+function Person(idNumber,ime,prezime,jmbg){
+    this.idNumber = idNumber;
+    this.ime = ime;
+    this.prezime = prezime;
+    this.jmbg = jmbg;
+    this.doPerson = function(){
+        return this.idNumber +" "+this.ime+" "+this.prezime+ " "+this.jmbg;
+    }
+}
+function doPerson(){
+    rez = "";
+    for(var i = 0;i<persons.length;i++){
+        rez += persons[i].doPerson();
+    }
+    document.getElementById("rez").innerHTML = rez;
+}
+
+function callPreson(){
+    var person = new Person(
+        document.getElementById("idNumber").value, 
+        document.getElementById("ime").value, 
+        document.getElementById("prezime").value,
+        document.getElementById("jmbg").value
+    );
+    persons.push(person);
+    doPerson();
+}
+//person
+
+function doReport() {
+   output = "";
+   for(var i = 0; i < soldiers.length; i++) {
+      output += (i + 1) + ") " + soldiers[i].doReport() + "; ";
+   }
+   document.getElementById("output").innerHTML = output;
+}
+
+function hire() {
+  var soldier =  new Soldier(
+    document.getElementById("allegiance").value, 
+    document.getElementById("armor").value, 
+    document.getElementById("weapon").value
+  );
+  soldiers.push(soldier);
+  doReport();
+}
+    </script> 
+</body>
+</html>

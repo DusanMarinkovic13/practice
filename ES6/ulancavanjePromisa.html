@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ulancavanje promisa</title>
+</head>
+<body>
+    <script>
+        const promise = new Promise(function(resolve, reject){
+            setTimeout(() => {resolve([0,1,2,3,4,5,6,7,8,9]); },2000);
+        });
+        function ispisiRezltat(value){console.log(value); return value;}
+        function samoParni(array){
+            return array.filter((value) => {return(value%2)===0;
+            });
+        }
+        function sumaClanovaNiza(array){
+            return array.reduce((a,b) => {return a+b;}, 0);
+        }
+        function errorHandler(err){console.log("ERROR"); console.log(err);}
+
+        promise
+        .then(ispisiRezltat)
+        .then(samoParni)
+        .then(ispisiRezltat)
+        .then(sumaClanovaNiza)
+        .then(ispisiRezltat)
+        .catch(errorHandler);
+    </script>
+</body>
+</html>

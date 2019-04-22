@@ -1,0 +1,149 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "KoHo";
+	color: #555555;
+}
+
+header {
+	overflow: auto;
+	width: 70%;
+	margin: auto;
+	height: 50px;
+	text-align: right;
+}
+
+header img {
+	border-radius: 50%;
+	width: 3%;
+	display: inline-block;
+	margin: 5px 0 0 0  ;
+}
+
+header nav {
+	overflow: auto;
+	width: 95%;
+	display: inline-block;
+}
+
+header ul {
+	list-style: none;
+	overflow: auto;
+}
+
+header ul li {
+	display: inline-block;
+	margin-left: 1.5%;
+}
+
+header ul li a {
+	text-decoration: none;
+}
+
+#first_sec {
+	background: #e26868;
+	height: 500px;
+	text-align: center;
+	padding-top: 100px;
+}
+
+#first_sec p {
+	font-size: 32px;
+	font-weight: 700;
+}
+
+#last_sec {
+	background: #4a3f60;
+	height: 500px;
+	width: 100%;
+
+}
+
+#last_sec {
+	color: #fff;
+	border:1px solid #000;
+	float: left;
+	text-align: center;
+	padding:10vh 25vw;
+}
+.text {
+	display: inline-block;
+	width: 35%;
+	text-align: left;
+	color: #fff;
+
+}
+.text p{
+	color: #fff;
+	padding-left: 40px;
+}
+
+.circle{
+	display: inline-block;
+	width: 4.5vw;
+	height: 9vh;
+	text-align: center;
+	overflow: none;
+	border-radius: 50%;
+	background: #443959;
+	padding: 10px;
+	margin-bottom: 80px;
+	margin-left: 10px;
+}
+.circle img{
+	width: 75%;
+	position: relative;
+	top:10px;
+}
+
+h3 {
+	text-align: center;
+	padding-top: 50px;
+	color: #000;
+	font-size: 25px;
+	clear:both; 
+}
+
+footer p {
+	text-align: center;
+	font-weight: 600;
+	color: #a9a9a9;
+	font-size: 18px;
+}
+
+footer form {
+	width: 50%;
+	background: #eeeeee;
+	margin: 20px auto 100px auto;
+	border-radius: 5px;
+	overflow: auto;
+}
+
+footer input {
+	padding: 8px;
+	background: #fff;
+	border: none;
+	border-radius: 5px;
+	margin: 2%;
+	width: 45.3%;
+}
+
+footer textarea {
+	background: #fff;
+	border: none;
+	border-radius: 5px;
+	resize: none;
+	margin: 0 2% 2% 2%;
+	width: 95%;
+	height: 70px;
+	padding: 8px;
+}
+
+input::placeholder {
+	color: #b3e4df;
+} 
+
+textarea::placeholder {
+	color: #b3e4df;
+}

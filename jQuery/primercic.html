@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="./jquery-3.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="stil.css">
+    <title>Primercic jQuery</title>
+</head>
+
+<body>
+    <div class="clicableBorder">Fade In/Fade Out</div>
+    <br/>
+    <div class="customBorder">Custom Border</div>
+    <h4 id="naslov"></h4>
+    <script>
+        $(document).ready(function() {
+            $(".clicableBorder").click(function() {
+                $(".customBorder").fadeToggle();
+            });
+        });
+        $(document).ready(function() {
+            $(".clicableBorder").hover(function() {
+                $(this).append($("<h6>Ovo je div sa klasom '.clicableBorder'</h6>"));
+            }, function() {
+                $(this).find("h6:last").remove();
+            });
+        });
+    </script>
+</body>
+
+</html>

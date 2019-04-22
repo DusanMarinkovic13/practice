@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gridHome</title>
+    <link rel="stylesheet" href="gridHome.css">
+    <link href="https://fonts.google.com/?selection.family=Ranga" rel="stylesheet">
+</head>
+
+<body>
+    <div class="gridContainer">
+        <header id="backHeader">
+            header
+        </header>
+        <aside class="sideLeft" id="homeMenu">
+            <!-- <a href="galerijaGrid.html">Gallery</a> -->
+            <ul id="listMenu">
+                <li><a href="galerijaGrid.html"><button>Gallery</button></a></li>
+                <li><a href="https://www.b92.net/sport/"><button>B92 sport</button></a></li>
+                <li><a href="https://www.blic.rs/"><button>Blic</button></a></li>
+                <li><a href="https://front-endzr.slack.com/?redir=%2Fmessages%2FCDG20KT89%2F"><button>Slack</button></a></li>
+                <li><a href="https://www.livescore.com/"><button>Livescore</button></a></li>
+            </ul>
+            <div id="formDiv">
+                <form id="formOne">
+                    <label for="userName">User Name</label>
+                    <input type="text" id="uName" name="uName" placeholder="User name">
+                    <label for="password">Password</label>
+                    <input type="password" id="pass" name="pass" placeholder="Password">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </aside>
+        <article>
+            <div class="mainGallery1">
+                <!--
+                <div class="galleryItem">
+                    <img class="scale" src="https://images.wallpaperscraft.com/image/wolf_forest_trees_rain_65448_1600x900.jpg" alt="vuk">
+                    <div class="describe">
+                        <h4><b>Description</b></h4>
+                        <p>Ovde je opis slike ili sadrzaja slike</p>
+                    </div>
+                </div> -->
+
+
+                <!-- class="scale" -->
+                <div class="galleryItem1" id="Picture">
+                    <a href="galerijaGrid.html"><img src="https://images.wallpaperscraft.com/image/deer_grass_leaves_autumn_trees_59721_1600x900.jpg" alt="jelen"></a>
+                    <div class="describe">
+                        <h4><b>Najnovije vesti</b></h4>
+                        <p>Ovde je opis slike ili sadrzaja slike</p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+        <aside class="sideRight" id="vesti">
+            <iframe src="https://www.youtube.com/embed/sHQTNjir31E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            <a href="http://www.birdwatchserbia.rs/"><img class="scale" id="mainPic" src="https://images.wallpaperscraft.com/image/bird_wings_bokeh_background_78625_1600x900.jpg" alt="ptica"></a>
+            <!-- <div class="describe">
+                    <h4><b>Description</b></h4>
+                    <p>Ovde je opis slike ili sadrzaja slike</p>
+                </div> -->
+
+        </aside>
+        <footer>
+            <p>Copyright &#169 2018 - vezbanje grida na front end obuci</p>
+        </footer>
+    </div>
+</body>
+
+</html>

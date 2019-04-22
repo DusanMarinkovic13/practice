@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a href='#' onclick='downloadCSV({ filename: "stock-data.csv" });'>Download CSV</a>
+
+
+    <script type="text/javascript">
+        var stockData = [{
+            Symbol: "AAPL",
+            Company: "Apple Inc.",
+            Price: "132.54"
+        }, {
+            Symbol: "INTC",
+            Company: "Intel Corporation",
+            Price: "33.45"
+        }, {
+            Symbol: "GOOG",
+            Company: "Google Inc",
+            Price: "554.52"
+        }, ];
+
+        function downloadCSV() {
+            var data, filename, link;
+            var csv = convertArrayOfObjectsToCSV({
+                data: data_array
+            });
+            if (csv == null)
+                return;
+
+            filename = 'YourFileNameHere.csv';
+
+            var blob = new Blob([csv], {
+                type: "text/csv;charset=utf-8;"
+            });
+
+            if (navigator.msSaveBlob) { // IE 10+
+                navigator.msSaveBlob(blob, filename)
+            } else {
+                var link = document.createElement("a");
+                if (link.download !== undefined) {
+
+                    // feature detection, Browsers that support HTML5 download attribute
+                    var url = URL.createObjectURL(blob);
+                    link.setAttribute("href", url);
+                    link.setAttribute("download", filename);
+                    link.style = "visibility:hidden";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+#glavni {
+    background-color: #F2f2f2;
+    width: 100%;
+}
+
+#levo {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.zaSliku {
+    width: 220px;
+    height: 150px;
+    margin-left: 30px;
+}
+
+.zaSliku img {
+    width: 100%;
+    height: auto;
+}
+
+#vesti {
+    width: 200px;
+    background-color: white;
+    color: red;
+    border: 2px solid green;
+    margin-right: 30px;
+}
+
+.zaParagraf {
+    width: 70%;
+    height: auto;
+}
+
+#ispodLogoa {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin-left: 40px;
+}
+
+#ispodLogoa::first-letter {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#desno {
+    float: right;
+    width: 74%;
+}
+
+#zaTabelu {
+    width: 100%;
+}
+
+.tabela {
+    width: 80%;
+    height: 250px;
+}
+
+.tabela,
+th,
+td {
+    border: 2px solid red;
+    text-align: center;
+    ;
+    border-collapse: collapse;
+}
+
+
+/* table{
+    border: 2px solid red;
+    width: 80%;
+    height: 250px;
+
+} */
+
+th {
+    background-color: #B01513;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.right {
+    border-left: hidden;
+}
+
+.crveniRed {
+    background-color: #F2e7e7;
+}
+
+hr {
+    width: 90%;
+    border: 1px solid red;
+    float: left;
+    margin-bottom: 20px;
+}
+
+#prazan {
+    height: 60px;
+}
+
+#horizontalniMeni {
+    width: 100%;
+}
+
+.menuItem {
+    width: 25%;
+    padding-right: 115px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#rezultati {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#forma {
+    border: 2px solid green;
+    width: 220px;
+    height: 120px;
+    background-color: white;
+    margin-left: 30px;
+}
+
+[value|=Ime],
+[value|=Lozinka] {
+    background-color: rgb(252, 190, 190);
+    margin-bottom: 10px;
+}
+
+[value|=log] {
+    margin-top: 5px;
+    margin-bottom: -10px;
+}
+
+[value|=submit] {
+    background-color: green;
+    margin-left: 80px;
+}
+
+#potpis {
+    margin-right: 130px;
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+}

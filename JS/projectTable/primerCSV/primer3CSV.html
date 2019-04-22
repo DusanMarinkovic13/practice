@@ -1,0 +1,100 @@
+<html>
+
+<head></head>
+
+<body>
+
+    <a href='#' onclick='downloadCSV({ filename: "stock-data.csv" });'>Download CSV</a>
+
+    <script type="text/javascript">
+        var Ljudi = {};
+        Ljudi.ime = this.ime;
+        Ljudi.prezime = this.prezime
+        Ljudi.firma = this.firma;
+        Ljudi.racun = this.racun;
+        Ljudi.dug = this.ljudi;
+        Ljudi.uplata = this.uplata;
+        Ljudi.ostatak = this.ostatak;
+        var id1 = new Ljudi;
+        id1.ime = document.getElementsByTagName("tr")(1).value;
+        console.log(id1.ime);
+
+
+
+        var stockData = [{
+            Symbol: "AAPL",
+            Company: "Apple Inc.",
+            Price: "132.54"
+        }, {
+            Symbol: "INTC",
+            Company: "Intel Corporation",
+            Price: "33.45"
+        }, {
+            Symbol: "GOOG",
+            Company: "Google Inc",
+            Price: "$2,554.52"
+        }, ];
+
+        function convertArrayOfObjectsToCSV(args) {
+            var isNumber = function(n) {
+                var t = parseFloat(n.replace(/\$|,/g, ''))
+                return isFinite(t) && +t === t;
+            };
+            var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+            data = args.data || null;
+            if (data == null || !data.length) {
+                return null;
+            }
+            columnDelimiter = args.columnDelimiter || ',';
+            lineDelimiter = args.lineDelimiter || '\n';
+            keys = Object.keys(data[0]);
+            result = '';
+            result += keys.join(columnDelimiter);
+            result += lineDelimiter;
+            data.forEach(function(item) {
+                ctr = 0;
+                keys.forEach(function(key) {
+                    if (ctr > 0) result += columnDelimiter;
+                    if (isNumber(item[key]) == true) {
+                        result += parseFloat(item[key].replace(/\$|,/g, ''));
+                    } else {
+                        result += "\"" + item[key] + "\"";
+                    }
+                    ctr++;
+                });
+                result += lineDelimiter;
+            });
+            return result;
+        }
+
+        function downloadCSV() {
+            var data, filename, link;
+            var csv = convertArrayOfObjectsToCSV({
+                data: stockData
+            });
+            if (csv == null)
+                return;
+            filename = 'YourFileNameHere.csv';
+            var blob = new Blob([csv], {
+                type: "text/csv;charset=utf-8;"
+            });
+            if (navigator.msSaveBlob) { // IE 10+
+                navigator.msSaveBlob(blob, filename)
+            } else {
+                var link = document.createElement("a");
+                if (link.download !== undefined) {
+                    // feature detection, Browsers that support HTML5 download attribute
+                    var url = URL.createObjectURL(blob);
+                    link.setAttribute("href", url);
+                    link.setAttribute("download", filename);
+                    link.style = "visibility:hidden";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

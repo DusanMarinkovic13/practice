@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Direktno referenciranje funkcije</title>
+</head>
+<body>
+    <script>
+        function boja(){
+            this.style.color="red";
+            this.style.width = "500px";
+            this.style.fontSize ="20px";
+        }
+        function boja2(){
+            this.style.color="green";
+            this.style.width = "150px";
+            this.style.border = "3px solid black";
+            this.style.fontFamily = "Arial";
+        }
+        
+        
+        function f1(){
+            document.getElementById("test").innerHTML = "Hello World!";
+        } 
+        /* moze i ovako, samo sto izbrise sve sa strane i ostane samo Hello World!
+        function f1(){
+            document.write("Hello World!");
+        } */
+        
+        window.onload = function(){
+            document.getElementById("prvi").onclick = boja;
+            document.getElementById("drugi").onclick = boja2;
+            document.getElementById("dugme").onclick = f1;
+        }
+        </script>
+        <div id="prvi">
+                Prvi blok Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Repudiandae enim voluptates debitis blanditiis reprehenderit dolore ut
+                 reiciendis, optio, totam commodi nostrum tempore ipsam velit consequuntur 
+                 ab aut voluptatibus et? Fugiat!
+                 Prvi blok Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Repudiandae enim voluptates debitis blanditiis reprehenderit dolore ut
+                 reiciendis, optio, totam commodi nostrum tempore ipsam velit consequuntur 
+                 ab aut voluptatibus et? Fugiat!
+        </div>
+        <br> <br> <br>
+        <div id="drugi">
+                Prvi blok Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Repudiandae enim voluptates debitis blanditiis reprehenderit dolore ut
+         reiciendis, optio, totam commodi nostrum tempore ipsam velit consequuntur 
+         ab aut voluptatibus et? Fugiat!
+         Prvi blok Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Repudiandae enim voluptates debitis blanditiis reprehenderit dolore ut
+         reiciendis, optio, totam commodi nostrum tempore ipsam velit consequuntur 
+         ab aut voluptatibus et? Fugiat!
+            </div>
+        <br> <br> <br>
+        <button id="dugme">Hello</button>
+       
+        <p id="test"></p>
+         
+</body>
+</html>
